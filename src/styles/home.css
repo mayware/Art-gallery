@@ -1,0 +1,19 @@
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.home-banner {
+    height: 600px;
+}
+
+.home-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.category-img {
+    height: 300px;
+    width: 450px;
+}

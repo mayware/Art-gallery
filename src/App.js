@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery"
 import CV from "./components/CV";
@@ -7,11 +7,19 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <Navbar />
+    <BrowserRouter>
+      <div className="App">
+        <div className="container">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/cv" element={<CV />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
