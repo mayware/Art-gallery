@@ -1,5 +1,5 @@
 import '../styles/navbar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -26,7 +26,13 @@ const Navbar = () => {
                             <span className="nav-link-title">CV</span>
                         </NavLink>
                     </div>
-                    <div className="navbar-links-social"></div>
+                    <div className="navbar-links-social">
+                        <Link to="/" className='nav-link'>
+                            <span className='social-link-title'>
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>
