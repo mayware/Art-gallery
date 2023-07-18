@@ -1,0 +1,6 @@
+.gallery-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid #fff;
+    color: #fff;
+}

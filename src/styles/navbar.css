@@ -52,6 +52,10 @@
     transition: 200ms ease-in-out;
 }
 
+.nav-link.active {
+    color: #80ed99;
+}
+
 .nav-host-name {
     font-size: 28px;
     font-weight: 700;

@@ -1,7 +1,13 @@
 import '../styles/navbar.css';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
+
+    const isActive = (path) => {
+        return location.pathname === path ? "active-link" : "";
+    };
+
     return (
         <nav className="navbar">
             <div className="navbar-left">
@@ -16,20 +22,20 @@ const Navbar = () => {
             <div className="navbar-right">
                 <div className="navbar-links">
                     <div className="navbar-page-links">
-                        <NavLink to="/" className="nav-link">
+                        <NavLink to="/" className={`nav-link ${isActive("/")}`}>
                             <span className="nav-link-title">Home</span>
                         </NavLink>
-                        <NavLink to="/gallery" className="nav-link">
+                        <NavLink to="/gallery" className={`nav-link ${isActive("/gallery")}`}>
                             <span className="nav-link-title">Gallery</span>
                         </NavLink>
-                        <NavLink to="/cv" className="nav-link">
+                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`}>
                             <span className="nav-link-title">CV</span>
                         </NavLink>
                     </div>
                     <div className="navbar-links-social">
                         <Link to="/" className='nav-link'>
                             <span className='social-link-title'>
-                                <i class="fa-brands fa-facebook-f"></i>
+                                <i className="fa-brands fa-facebook-f"></i>
                             </span>
                         </Link>
                     </div>
