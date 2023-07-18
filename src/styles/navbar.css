@@ -18,12 +18,6 @@
 .nav-brand-link {
     text-decoration: none;
     color: #e0e1dd;
-    transition: 200ms ease-in-out;
-}
-
-.nav-brand-link:hover {
-    color: #8d99ae;
-    transition: 200ms ease-in-out;
 }
 
 .nav-brand-name-title {
@@ -54,6 +48,7 @@
 
 .nav-link.active {
     color: #80ed99;
+    text-shadow: 4px 4px 6px rgba(56, 163, 165, 1);
 }
 
 .nav-host-name {
