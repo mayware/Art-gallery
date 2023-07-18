@@ -3,10 +3,16 @@
     grid-template-columns: 1fr;
 }
 
-.home-banner {}
+.home-banner {
+    background-image: url('../assets/bg2.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
 
 .banner-images {
-    height: 700px;
+    height: 800px;
     width: 100vw;
     position: relative;
     display: inline-block;
@@ -60,6 +66,8 @@
     font-size: 20px;
     font-weight: 500;
     color: #e0e1dd;
+    padding: 1rem;
+    border-left: 1px solid #fff;
 }
 
 @keyframes slideFromLeft {

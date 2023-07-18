@@ -1,7 +1,10 @@
 import '../styles/footer.css';
 const Footer = () => {
     return (
-        <div className="footer"></div>
+        <div className="footer">
+            <div className="footer-left"></div>
+            <div className="footer-right"></div>
+        </div>
     );
 }
 
