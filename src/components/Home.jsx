@@ -1,4 +1,5 @@
 import '../styles/home.css';
+import Filterbar from './Filterbar';
 import Carousel from "./Carousel"
 import catOne from '../assets/categories/4.jpg'
 import catTwo from '../assets/categories/5.jpg'
@@ -19,6 +20,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="home-categories">
+                    <Filterbar />
                     <div className="category-illustration">
                         <div className="overlay">
                             <span className="image-title">Image title</span>

@@ -1,0 +1,39 @@
+.filter-bar {
+    /* width: 350px; */
+    border-radius: 25px;
+    /* border: 1px solid #fff; */
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background: #000;
+}
+
+.filter-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    background: #101010;
+    color: #e0e1dd;
+    border: 1px solid #003566;
+    cursor: pointer;
+}
+
+#left-filter-btn {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#right-filter-btn {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
