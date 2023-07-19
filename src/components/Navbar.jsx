@@ -29,7 +29,7 @@ const Navbar = () => {
                             <span className="nav-link-title">Gallery</span>
                         </NavLink>
                         <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`}>
-                            <span className="nav-link-title">CV</span>
+                            <span className="nav-link-title">About</span>
                         </NavLink>
                     </div>
                     <div className="navbar-links-social">

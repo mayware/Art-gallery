@@ -42,7 +42,8 @@
 }
 
 .nav-link:hover {
-    color: #8d99ae;
+    color: #00a6fb;
+    text-shadow: 4px 4px 6px rgba(56, 163, 165, 1);
     transition: 200ms ease-in-out;
 }
 
