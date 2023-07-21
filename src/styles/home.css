@@ -25,11 +25,16 @@
     object-fit: fill;
 }
 
-.home-categories {
+.home-category-area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.art-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     justify-items: center;
-    position: relative;
 }
 
 .category-illustration {
