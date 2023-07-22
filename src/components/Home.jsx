@@ -1,6 +1,5 @@
 import '../styles/home.css';
 import Filterbar from './Filterbar';
-import Carousel from "./Carousel"
 import catOne from '../assets/categories/4.jpg'
 import catTwo from '../assets/categories/5.jpg'
 import catThree from '../assets/categories/6.jpg'
@@ -15,9 +14,7 @@ const Home = () => {
         <div className="content">
             <div className="home-content">
                 <div className="home-banner">
-                    <div className="banner-images">
-                        {/* <Carousel /> */}
-                    </div>
+                    <div className="banner-image"></div>
                 </div>
                 <div className="home-category-area">
                     <Filterbar />

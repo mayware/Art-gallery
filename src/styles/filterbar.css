@@ -1,23 +1,14 @@
 .filter-bar {
-    height: 35px;
+    position: -webkit-sticky;
+    position: sticky;
     width: 350px;
-    position: absolute;
-    top: 5%;
+    /* position: absolute; */
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
     background: #000;
     border-radius: 25px;
-    border: 1px solid #fff;
-}
-
-.filter-bar.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 110px;
-    left: 50%;
-    right: 50%;
-    z-index: 100;
 }
 
 .filter-buttons {

@@ -25,15 +25,21 @@ const Navbar = () => {
                         <NavLink to="/" className={`nav-link ${isActive("/")}`}>
                             <span className="nav-link-title">Home</span>
                         </NavLink>
-                        <NavLink to="/gallery" className={`nav-link ${isActive("/gallery")}`}>
+                        <NavLink to={"/gallery"} className={`nav-link ${isActive("/gallery")}`}>
                             <span className="nav-link-title">Gallery</span>
                         </NavLink>
-                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`}>
+                        <NavLink to="/about" className={`nav-link ${isActive("/cv")}`}>
                             <span className="nav-link-title">About</span>
+                        </NavLink>
+                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`}>
+                            <span className="nav-link-title">CV</span>
+                        </NavLink>
+                        <NavLink to="/contact" className={`nav-link ${isActive("/cv")}`}>
+                            <span className="nav-link-title">Contact</span>
                         </NavLink>
                     </div>
                     <div className="navbar-links-social">
-                        <Link to="/" className='nav-link'>
+                        <Link to="{}" className='nav-link'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>

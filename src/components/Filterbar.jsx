@@ -1,28 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/filterbar.css';
 
 const Filterbar = () => {
     const [activeButton, setActiveButton] = useState('All');
-    const [isSticky, setIsSticky] = useState(false);
-    useEffect(() => {
-        const toggleStickyFilterBar = () => {
-            const filterBar = document.getElementById('sticky-filter-bar');
-            const stickyOffset = filterBar.offsetTop;
-            setIsSticky(window.pageYOffset >= stickyOffset);
-        };
-
-        window.addEventListener('scroll', toggleStickyFilterBar);
-        return () => {
-            window.removeEventListener('scroll', toggleStickyFilterBar);
-        };
-    }, []);
 
     const handleButtonClick = (buttonName) => {
         setActiveButton(buttonName);
     };
 
     return (
-        <div className={`filter-bar ${isSticky ? 'sticky' : ''}`}
+        <div className='filter-bar'
             id="sticky-filter-bar">
             <div className="filter-buttons">
                 <button
