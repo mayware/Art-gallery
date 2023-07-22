@@ -18,60 +18,62 @@ const Home = () => {
                 </div>
                 <div className="home-category-area">
                     <Filterbar />
-                    <div className="art-categories">
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                    <div className="category-section">
+                        <div className="art-categories">
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catOne} className='category-img' alt="" />
                             </div>
-                            <img src={catOne} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catFour} className='category-img' alt="" />
                             </div>
-                            <img src={catFour} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catThree} className='category-img' alt="" />
                             </div>
-                            <img src={catThree} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catTwo} className='category-img' alt="" />
                             </div>
-                            <img src={catTwo} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catFive} className='category-img' alt="" />
                             </div>
-                            <img src={catFive} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catSix} className='category-img' alt="" />
                             </div>
-                            <img src={catSix} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catFour} className='category-img' alt="" />
                             </div>
-                            <img src={catFour} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catSeven} className='category-img' alt="" />
                             </div>
-                            <img src={catSeven} className='category-img' alt="" />
-                        </div>
-                        <div className="category-illustration">
-                            <div className="overlay">
-                                <span className="image-title">Image title</span>
+                            <div className="category-illustration">
+                                <div className="overlay">
+                                    <span className="image-title">Image title</span>
+                                </div>
+                                <img src={catEight} className='category-img' alt="" />
                             </div>
-                            <img src={catEight} className='category-img' alt="" />
                         </div>
                     </div>
                 </div>

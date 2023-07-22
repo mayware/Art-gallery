@@ -21,7 +21,7 @@ function App() {
             <Route path="/cv" element={<CV />} />
           </Routes>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );
