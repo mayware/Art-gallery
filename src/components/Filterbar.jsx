@@ -9,8 +9,7 @@ const Filterbar = () => {
     };
 
     return (
-        <div className='filter-bar'
-            id="sticky-filter-bar">
+        <div className='filter-bar'>
             <div className="filter-buttons">
                 <button
                     className={`filter-btn ${activeButton === 'All' ? 'active' : ''}`}
