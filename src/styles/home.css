@@ -1,6 +1,7 @@
 .home-content {
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
 }
 
 .home-banner {
