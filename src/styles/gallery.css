@@ -1,12 +1,11 @@
 .gallery-content {
-
     padding: 1.5rem 0 1.5rem 0;
 }
 
 .main-gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 25px;
     min-height: 800px;
     min-width: 1200px;
     padding: 1rem;
@@ -24,9 +23,8 @@
 }
 
 .gallery-set {
-    border: 1px solid #fff;
     min-height: 800px;
-    max-height: 800px;
+    /* max-height: 900px; */
     min-width: 960px;
     max-width: 100%;
 }

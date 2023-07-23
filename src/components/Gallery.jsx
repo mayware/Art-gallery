@@ -13,7 +13,7 @@ const Gallery = () => {
 
                     </div>
                     <div className="gallery-set">
-                        <GalleryImages images={images} />
+                        {images && <GalleryImages images={images} />}
                     </div>
                 </div>
             </div>
