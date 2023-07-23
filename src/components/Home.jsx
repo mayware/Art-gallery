@@ -10,6 +10,7 @@ import catSeven from '../assets/categories/10.jpg'
 import catEight from '../assets/categories/11.jpg'
 import banner from "../assets/1.jpg";
 const Home = () => {
+
     return (
         <div className="content">
             <div className="home-content">

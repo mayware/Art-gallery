@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+    animation: fadeIn 5s;
 }
 
 .banner-image {
@@ -26,9 +27,12 @@
 }
 
 .home-category-area {
-    display: flex;
-    flex-direction: column;
     position: relative;
+    align-items: center;
+}
+
+.category-images {
+    border: 1px solid yellow;
 }
 
 .art-categories {
@@ -37,18 +41,6 @@
     justify-items: center;
     position: relative;
 }
-
-.filter-tab {
-    position: sticky;
-    width: 350px;
-    top: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    /* border: 1px solid #fff; */
-}
-
-.images-categories {}
 
 .category-illustration {
     position: relative;
@@ -89,13 +81,13 @@
     border-left: 1px solid #fff;
 }
 
-@keyframes slideFromLeft {
+@keyframes fadeIn {
     0% {
-        transform: translateX(-100%);
+        opacity: 0;
     }
 
     100% {
-        transform: translateX(0%);
+        opacity: 1;
     }
 }
 

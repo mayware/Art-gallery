@@ -1,12 +1,17 @@
 .filter-bar {
-    position: absolute;
-    width: 350px;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 12%;
     z-index: 100;
-    background: #000;
-    border-radius: 25px;
+}
+
+.filter-tab {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-top: 35px;
 }
 
 .filter-buttons {
@@ -31,8 +36,8 @@
 }
 
 .filter-btn.active {
-    color: #80ed99;
-    border: 1px solid #ff5400;
+    color: #f4a261;
+    border: 1px solid #00a6fb;
     transition: 200ms ease-in-out;
 }
 
