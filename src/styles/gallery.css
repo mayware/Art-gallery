@@ -5,7 +5,7 @@
 .main-gallery {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 35px;
     min-height: 800px;
     min-width: 1200px;
     padding: 1rem;

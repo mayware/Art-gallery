@@ -20,11 +20,11 @@
 
 .gallery-image-box:hover {
     transition: 200ms ease-in-out;
-    box-shadow: 0px 0px 15px #f4a261;
+    box-shadow: 0px 0px 25px #f77f00;
 }
 
 .gallery-image-pic {
-    width: 270px;
+    width: 250px;
     min-height: 285px;
     max-height: 285px;
     border: none;
