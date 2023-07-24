@@ -73,7 +73,6 @@
     width: 100%;
     border-radius: 15px;
     margin-bottom: 1rem;
-    border: 1px solid #202020;
     background: #151515;
 }
 
@@ -98,7 +97,7 @@
 }
 
 .modal-image-dec {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: #e0e1dd;
 }

@@ -49,5 +49,7 @@
 }
 
 .gallery-image-title {
+    font-size: 16px;
+    font-weight: 500;
     color: #e0e1dd;
 }
