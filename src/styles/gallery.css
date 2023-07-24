@@ -9,17 +9,22 @@
     min-height: 800px;
     min-width: 1200px;
     padding: 1rem;
-    border: 1px solid #fff;
-    border-radius: 5px;
+    /* border: 1px solid #fff; */
+    border-radius: 15px;
+    background: #0F0E0E;
 }
 
-.gallery-slide-banner {
+.gallery-banner {
     min-height: 400px;
     max-height: 400px;
     min-width: 960px;
     max-width: 100%;
     border-radius: 5px;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
+    background-image: url('../assets//gallery-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .gallery-set {

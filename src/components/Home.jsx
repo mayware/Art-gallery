@@ -8,7 +8,6 @@ import catFive from '../assets/categories/8.jpg'
 import catSix from '../assets/categories/9.jpg'
 import catSeven from '../assets/categories/10.jpg'
 import catEight from '../assets/categories/11.jpg'
-import banner from "../assets/1.jpg";
 const Home = () => {
 
     return (

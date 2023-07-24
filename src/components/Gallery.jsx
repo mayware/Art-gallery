@@ -17,14 +17,14 @@ const Gallery = () => {
 
     function closeModal() {
         setModalVisibility(false);
-        document.body.style.overflow = "auto";
         setSelectedImage(null);
+        document.body.style.overflow = "auto";
     }
     return (
         <div className="content">
             <div className="gallery-content">
                 <div className="main-gallery">
-                    <div className="gallery-slide-banner">
+                    <div className="gallery-banner">
 
                     </div>
                     <div className="gallery-set">
