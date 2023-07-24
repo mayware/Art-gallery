@@ -26,7 +26,7 @@ const Gallery = () => {
                     </div>
                     <div className="gallery-set">
                         {images && <GalleryImages images={images} openModal={openModal} />}
-                        {modalVisibility && <Modal onClose={closeModal} />}
+                        {modalVisibility && <Modal closeModal={closeModal} />}
                     </div>
                 </div>
             </div>
