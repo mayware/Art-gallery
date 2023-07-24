@@ -1,5 +1,5 @@
 .gallery-content {
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 2.5rem 0 2.5em 0;
 }
 
 .main-gallery {
@@ -9,9 +9,12 @@
     min-height: 800px;
     min-width: 1200px;
     padding: 1rem;
-    /* border: 1px solid #fff; */
     border-radius: 15px;
     background: #0F0E0E;
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(148, 27, 12, 1);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(148, 27, 12, 1);
+    box-shadow: 0px 0px 15px 5px rgba(148, 27, 12, 1);
+    animation: fadeIn 5s;
 }
 
 .gallery-banner {
@@ -32,4 +35,15 @@
     /* max-height: 900px; */
     min-width: 960px;
     max-width: 100%;
+    padding: 1rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

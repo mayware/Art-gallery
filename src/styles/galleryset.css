@@ -14,13 +14,14 @@
     max-height: 350px;
     padding: .5rem;
     background: #101010;
+    border: 1px solid #202020;
     border-radius: 20px;
     transition: 200ms ease-in-out;
 }
 
 .gallery-image-box:hover {
     transition: 200ms ease-in-out;
-    box-shadow: 0px 0px 25px #f77f00;
+    box-shadow: 0px 0px 25px #941b0c;
 }
 
 .gallery-image-pic {
