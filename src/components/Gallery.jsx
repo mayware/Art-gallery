@@ -7,15 +7,18 @@ import Modal from './Modal';
 const Gallery = () => {
     const { data: images, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539');
     const [modalVisibility, setModalVisibility] = useState(false);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     function openModal(image) {
         setModalVisibility(true);
-        // setSelectedBook(image);
+        setSelectedImage(image);
+        document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
         setModalVisibility(false);
-        // setSelectedBook(null);
+        document.body.style.overflow = "auto";
+        setSelectedImage(null);
     }
     return (
         <div className="content">
@@ -26,7 +29,7 @@ const Gallery = () => {
                     </div>
                     <div className="gallery-set">
                         {images && <GalleryImages images={images} openModal={openModal} />}
-                        {modalVisibility && <Modal closeModal={closeModal} />}
+                        {modalVisibility && <Modal closeModal={closeModal} selectedImage={selectedImage} />}
                     </div>
                 </div>
             </div>
