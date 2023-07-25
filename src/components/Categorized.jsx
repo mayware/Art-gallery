@@ -1,4 +1,10 @@
+import { useEffect } from "react";
 const Categorized = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <div className="content">
             <div className="categorized-content">

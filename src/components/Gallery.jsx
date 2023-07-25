@@ -1,5 +1,5 @@
 import '../styles/gallery.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useFetch from '../useFetch';
 import GalleryImages from './GalleryImages';
 import Modal from './Modal';
@@ -20,6 +20,10 @@ const Gallery = () => {
         setSelectedImage(null);
         document.body.style.overflow = "auto";
     }
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <div className="content">
             <div className="gallery-content">

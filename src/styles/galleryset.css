@@ -14,14 +14,19 @@
     max-height: 350px;
     padding: .5rem;
     background: #101010;
-    border: 1px solid #202020;
+    border: 1px solid #212529;
     border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
     transition: 200ms ease-in-out;
 }
 
 .gallery-image-box:hover {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(148, 27, 12, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(148, 27, 12, 1);
+    box-shadow: 0px 0px 15px 0px rgba(148, 27, 12, 1);
     transition: 200ms ease-in-out;
-    box-shadow: 0px 0px 25px #941b0c;
 }
 
 .gallery-image-pic {

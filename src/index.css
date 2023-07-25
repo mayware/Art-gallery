@@ -21,3 +21,19 @@ body {
   justify-content: center;
   padding-top: 85px;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #343a40;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #adb5bd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dee2e6;
+}

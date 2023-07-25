@@ -1,4 +1,5 @@
 import '../styles/home.css';
+import { useEffect } from 'react';
 import Filterbar from './Filterbar';
 import catOne from '../assets/categories/4.jpg'
 import catTwo from '../assets/categories/5.jpg'
@@ -9,6 +10,10 @@ import catSix from '../assets/categories/9.jpg'
 import catSeven from '../assets/categories/10.jpg'
 import catEight from '../assets/categories/11.jpg'
 const Home = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <div className="content">
