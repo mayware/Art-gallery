@@ -90,6 +90,7 @@
     width: 100%;
     object-fit: fill;
     transition: transform 0.3s;
+    display: block;
 }
 
 .category-illustration:hover .category-img {
