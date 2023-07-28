@@ -21,6 +21,7 @@ const Gallery = () => {
         document.body.style.overflow = "auto";
     }
     useEffect(() => {
+        console.log("Gallery component mounted.");
         window.scrollTo(0, 0);
     }, [])
 
