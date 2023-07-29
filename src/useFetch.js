@@ -16,7 +16,6 @@ const useFetch = (url, limit = null) => {
             .then(data => {
                 console.log(data);
                 setData(limit ? data.slice(0, limit) : data);
-                // setData(data);
                 setIsPending(false);
                 setError(null);
             })
