@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const useFetch = (url) => {
+const useFetch = (url, limit = null) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
@@ -15,8 +15,9 @@ const useFetch = (url) => {
             })
             .then(data => {
                 console.log(data);
-                setData(data)
-                setIsPending(false)
+                setData(limit ? data.slice(0, limit) : data);
+                // setData(data);
+                setIsPending(false);
                 setError(null);
             })
             .catch(err => {
@@ -27,7 +28,7 @@ const useFetch = (url) => {
                 }
             })
         return () => abortCont.abort();
-    }, [url]);
+    }, [url, limit]);
 
     return (
         { data, isPending, error }
