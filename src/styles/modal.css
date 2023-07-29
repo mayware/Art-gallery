@@ -47,7 +47,7 @@
     font-size: 24px;
     background: none;
     border: none;
-    color: #f4a261;
+    color: #ced4da;
     cursor: pointer;
     transition: 200ms ease-in-out;
 }
@@ -68,6 +68,7 @@
 }
 
 .modal-body-image {
+    position: relative;
     min-height: 400px;
     max-height: 400px;
     width: 100%;
@@ -82,6 +83,28 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     object-fit: fill;
+}
+
+.modal-image-fullsize-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 24px;
+    color: #ced4da;
+    transition: 200ms ease-in-out;
+}
+
+.modal-image-fullsize-link:hover {
+    color: #6c757d;
+    transition: 200ms ease-in-out;
 }
 
 .modal-body-footer {
@@ -107,11 +130,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 45px;
+    width: 45px;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 24px;
-    color: #f4a261;
+    color: #ced4da;
+    transition: 200ms ease-in-out;
+}
+
+.modal-nav-btn:hover {
+    color: #6c757d;
+    transition: 200ms ease-in-out;
+}
+
+.modal-nav-btn:disabled {
+    color: #6c757d;
 }
 
 @-webkit-keyframes animatetop {

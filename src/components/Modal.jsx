@@ -13,6 +13,9 @@ const Modal = ({ closeModal, selectedImage, images, openModal }) => {
         openModal(images[prevIndex]);
     };
 
+    const isPrevButtonDisabled = currentIndex === 0;
+    const isNextButtonDisabled = currentIndex === images.length - 1;
+
     return (
         <div className="modal">
             <div className="modal-content">
@@ -24,16 +27,19 @@ const Modal = ({ closeModal, selectedImage, images, openModal }) => {
                 <div className="modal-body">
                     <div className="modal-body-image">
                         <img src={selectedImage.image} alt="modal-image" className="modal-image-img" />
+                        <a href={selectedImage.image} target='_blank' className='modal-image-fullsize-link'>
+                            <i class="fa-solid fa-expand"></i>
+                        </a>
                     </div>
                     <div className="modal-body-footer">
-                        <button className="modal-nav-btn" onClick={handlePrev}>
-                            <i class="fa-solid fa-caret-left"></i>
+                        <button className="modal-nav-btn" onClick={handlePrev} disabled={isPrevButtonDisabled}>
+                            <i className="fa-solid fa-caret-left"></i>
                         </button>
                         <span className="modal-image-dec">
                             {selectedImage.title}
                         </span>
-                        <button className="modal-nav-btn" onClick={handleNext}>
-                            <i class="fa-solid fa-caret-right"></i>
+                        <button className="modal-nav-btn" onClick={handleNext} disabled={isNextButtonDisabled}>
+                            <i className="fa-solid fa-caret-right"></i>
                         </button>
                     </div>
                 </div>
