@@ -30,7 +30,9 @@ const Gallery = () => {
             <div className="gallery-content">
                 <div className="main-gallery">
                     <div className="gallery-banner">
-
+                        {/* <span className="gallery-banner-quote">
+                            "Whoever marries the spirit of this age will find himself a widower in the next." , Soeren Kierkegaard
+                        </span> */}
                     </div>
                     <div className="gallery-set">
                         {images && <GalleryImages images={images} openModal={openModal} />}

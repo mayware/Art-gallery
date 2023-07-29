@@ -75,6 +75,9 @@
     border-radius: 15px;
     margin-bottom: 1rem;
     background: #151515;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
 }
 
 .modal-image-img {
@@ -82,6 +85,8 @@
     width: 100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     object-fit: fill;
 }
 
@@ -115,6 +120,8 @@
     width: 100%;
     padding: 0 1rem 0 1rem;
     border: 1px solid #212529;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background: #151515;
@@ -147,6 +154,7 @@
 
 .modal-nav-btn:disabled {
     color: #6c757d;
+    cursor: default;
 }
 
 @-webkit-keyframes animatetop {

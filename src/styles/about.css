@@ -1,0 +1,9 @@
+.about-banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    min-height: 100vh;
+    min-width: 1200px;
+    padding: .5rem;
+    border: 1px solid #fff;
+}

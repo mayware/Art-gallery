@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import '../styles/about.css';
 const About = () => {
 
     useEffect(() => {
@@ -8,7 +9,9 @@ const About = () => {
     return (
         <div className="content">
             <div className="about-content">
+                <div className="about-banner">
 
+                </div>
             </div>
         </div>
     );
