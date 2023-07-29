@@ -47,7 +47,7 @@
     font-size: 24px;
     background: none;
     border: none;
-    color: #adb5bd;
+    color: #f4a261;
     cursor: pointer;
     transition: 200ms ease-in-out;
 }
@@ -84,13 +84,14 @@
     object-fit: fill;
 }
 
-.modal-body-desc {
+.modal-body-footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
     padding: 0 1rem 0 1rem;
-    border: 1px solid #202020;
+    border: 1px solid #212529;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background: #151515;
@@ -100,6 +101,17 @@
     font-size: 18px;
     font-weight: 500;
     color: #e0e1dd;
+}
+
+.modal-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #f4a261;
 }
 
 @-webkit-keyframes animatetop {
