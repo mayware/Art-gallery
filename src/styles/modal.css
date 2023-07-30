@@ -83,8 +83,8 @@
 .modal-image-img {
     height: 100%;
     width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     object-fit: fill;
@@ -122,8 +122,8 @@
     border: 1px solid #212529;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     background: #151515;
 }
 

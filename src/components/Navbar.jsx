@@ -41,6 +41,11 @@ const Navbar = () => {
                     <div className="navbar-links-social">
                         <Link to="{}" className='nav-link'>
                             <span className='social-link-title'>
+                                <i class="fa-brands fa-wikipedia-w"></i>
+                            </span>
+                        </Link>
+                        <Link to="{}" className='nav-link'>
+                            <span className='social-link-title'>
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>
                         </Link>
