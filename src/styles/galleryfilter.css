@@ -1,11 +1,59 @@
 .gallery-filter {
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 35px;
+    height: 45px;
     background: #151515;
     border: 1px solid #343a40;
     border-radius: 5px;
+}
+
+.gallery-filter-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 150px;
+    margin: .5rem;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ced4da;
+    background: #101010;
+    border: 1px solid #343a40;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    transition: 200ms ease-in-out;
+}
+
+.gallery-filter-btn:hover {
+    background: #212529;
+    transition: 200ms ease-in-out;
+}
+
+.gallery-filter-btn.active {
+    border: 1px solid #eb5e28;
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(235, 94, 40, 1);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(235, 94, 40, 1);
+    box-shadow: 0px 0px 24px 0px rgba(235, 94, 40, 1);
+    transition: 200ms ease-in-out;
+}
+
+#gallery-left-filter-btn {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#gallery-right-filter-btn {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
