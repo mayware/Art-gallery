@@ -48,9 +48,9 @@
 .gallery-filter-tab {
     width: 100%;
     margin-bottom: 2rem;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    /* -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
     -moz-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
-    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
+    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1); */
 }
 
 .gallery-box-footer {

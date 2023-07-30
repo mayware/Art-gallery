@@ -1,4 +1,6 @@
 import '../styles/footer.css';
+import Scrollupbutton from './Scrollupbutton';
+
 const Footer = () => {
     return (
         <div className="footer">
@@ -8,7 +10,9 @@ const Footer = () => {
                         <span className="footer-brand-name-title">Daghol</span>
                     </div>
                 </div>
-                <div className="footer-right"></div>
+                <div className="footer-right">
+                    <Scrollupbutton />
+                </div>
             </div>
         </div>
     );
