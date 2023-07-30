@@ -14,7 +14,6 @@ const useFetch = (url, limit = null) => {
                 return res.json()
             })
             .then(data => {
-                console.log(data);
                 setData(limit ? data.slice(0, limit) : data);
                 setIsPending(false);
                 setError(null);

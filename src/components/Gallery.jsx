@@ -9,6 +9,7 @@ const Gallery = () => {
     const { data: images, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539', imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [allImagesRetrieved, setAllImagesRetrieved] = useState(false);
 
     function openModal(image) {
         setModalVisibility(true);
@@ -28,7 +29,6 @@ const Gallery = () => {
     }
 
     useEffect(() => {
-        console.log("Gallery component mounted.");
         window.scrollTo(0, 0);
     }, [])
 
