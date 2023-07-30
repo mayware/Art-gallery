@@ -2,7 +2,7 @@ import '../styles/gallery.css';
 import { useState, useEffect } from 'react';
 import useFetch from '../useFetch';
 import GalleryImages from './GalleryImages';
-import GalleryFilter from './Galleryfilter';
+import Filterbar from './Filterbar';
 import Modal from './Modal';
 
 const Gallery = () => {
@@ -39,8 +39,8 @@ const Gallery = () => {
                 <div className="gallery-box">
                     <div className="gallery-banner"></div>
                     <div className="gallery-set">
-                        <div className="gallery-filter-tab">
-                            <GalleryFilter />
+                        <div className="filter-tab">
+                            <Filterbar />
                         </div>
                         {images && <GalleryImages images={images} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}

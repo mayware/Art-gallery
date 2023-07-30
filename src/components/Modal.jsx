@@ -28,15 +28,20 @@ const Modal = ({ closeModal, selectedImage, images, openModal }) => {
                     <div className="modal-body-image">
                         <img src={selectedImage.image} alt="modal-image" className="modal-image-img" />
                         <a href={selectedImage.image} target='_blank' className='modal-image-fullsize-link'>
-                            <i class="fa-solid fa-expand"></i>
+                            <i className="fa-solid fa-expand"></i>
                         </a>
                     </div>
                     <div className="modal-body-footer">
                         <button className="modal-nav-btn" onClick={handlePrev} disabled={isPrevButtonDisabled}>
                             <i className="fa-solid fa-caret-left"></i>
                         </button>
-                        <span className="modal-image-dec">
-                            {selectedImage.title}
+                        <span className="modal-image-desc">
+                            <div className="modal-image-desc-title">
+                                {selectedImage.title}
+                            </div>
+                            <div className="modal-image-desc-size">
+                                {selectedImage.size}
+                            </div>
                         </span>
                         <button className="modal-nav-btn" onClick={handleNext} disabled={isNextButtonDisabled}>
                             <i className="fa-solid fa-caret-right"></i>

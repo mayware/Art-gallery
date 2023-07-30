@@ -8,7 +8,7 @@ const Scrollupbutton = () => {
     return (
         <div className="scroll-up-button">
             <button className="scroll-up-btn" onClick={scrollToTheTop}>
-                <i class="fa-solid fa-chevron-up"></i>
+                <i className="fa-solid fa-chevron-up"></i>
             </button>
         </div>
     );

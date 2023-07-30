@@ -1,6 +1,5 @@
 import '../styles/home.css';
 import { useEffect } from 'react';
-import Filterbar from './Filterbar';
 import Homeimages from './Homeimages';
 import useFetch from '../useFetch';
 const Home = () => {
@@ -17,9 +16,6 @@ const Home = () => {
                     <div className="banner-image"></div>
                 </div>
                 <div className="home-category-area">
-                    <div className="filter-tab">
-                        <Filterbar />
-                    </div>
                     <div className="art-categories">
                         {categoryImages && <Homeimages categoryImages={categoryImages} />}
                     </div>

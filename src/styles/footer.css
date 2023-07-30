@@ -1,6 +1,7 @@
 .footer {
     height: 175px;
-    background: #101010;
+    border-top: 1px solid #212529;
+    background: #151515;
 }
 
 .footer-inner {
