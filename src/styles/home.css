@@ -41,15 +41,17 @@
 
 .art-categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
     justify-items: center;
     position: relative;
+    border-radius: 5px;
 }
 
 .category-illustration {
     position: relative;
     height: 300px;
-    width: 100%;
+    width: 425px;
     overflow: hidden;
 }
 
@@ -86,11 +88,12 @@
 }
 
 .category-img {
+    display: block;
     height: 100%;
     width: 100%;
     object-fit: fill;
     transition: transform 0.3s;
-    display: block;
+    border-radius: 5px;
 }
 
 .category-illustration:hover .category-img {
