@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+
 const useFetch = (url, limit = null) => {
     const [data, setData] = useState(null);
+    const [totalImages, setTotalImages] = useState(0); // New state to hold total number of images
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
@@ -11,10 +13,11 @@ const useFetch = (url, limit = null) => {
                 if (!res.ok) {
                     throw Error('Could not fetch the data from the resource')
                 }
-                return res.json()
+                return res.json();
             })
             .then(data => {
                 setData(limit ? data.slice(0, limit) : data);
+                setTotalImages(data.length); // Update the total number of images
                 setIsPending(false);
                 setError(null);
             })
@@ -24,13 +27,11 @@ const useFetch = (url, limit = null) => {
                     setIsPending(false);
                     setError(err.message);
                 }
-            })
+            });
         return () => abortCont.abort();
     }, [url, limit]);
 
-    return (
-        { data, isPending, error }
-    );
+    return { data, totalImages, isPending, error }; // Return totalImages as well
 }
 
 export default useFetch;

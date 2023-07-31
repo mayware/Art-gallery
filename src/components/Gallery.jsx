@@ -7,7 +7,7 @@ import Modal from './Modal';
 
 const Gallery = () => {
     const [imageNumber, setImageNumber] = useState(12);
-    const { data: images, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539', imageNumber);
+    const { data: images, totalImages, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539', imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [allImagesRetrieved, setAllImagesRetrieved] = useState(false);
@@ -23,8 +23,9 @@ const Gallery = () => {
         setSelectedImage(null);
         document.body.style.overflow = "auto";
     }
+
     function showMoreImages() {
-        if (images && images.length > 0) {
+        if (images && images.length < totalImages) { // Check if there are more images to show
             setImageNumber(imageNumber + 12);
         }
     }
@@ -50,7 +51,7 @@ const Gallery = () => {
                     </div>
                     <div className="gallery-box-footer">
                         <div className="gallery-images-uploader">
-                            {images && images.length < 48 && (
+                            {images && images.length < totalImages && ( // Show button only if there are more images to fetch
                                 <button className="gallery-show-more-btn" onClick={showMoreImages}>
                                     <span className="show-more-btn-title">Show more</span>
                                     <i className="fa-solid fa-chevron-down"></i>
