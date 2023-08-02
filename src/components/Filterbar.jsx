@@ -22,7 +22,7 @@ const Filterbar = () => {
                     className={`filter-btn ${activeButton === 'Oil paintings' ? 'active' : ''}`}
                     onClick={() => handleButtonClick('Oil paintings')}
                 >
-                    Oil paintings
+                    Oil Paintings
                 </button>
                 <button
                     className={`filter-btn ${activeButton === 'Lithographs' ? 'active' : ''}`}

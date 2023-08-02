@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useFetch = (url, limit = null) => {
     const [data, setData] = useState(null);
-    const [totalImages, setTotalImages] = useState(0); // New state to hold total number of images
+    const [totalImages, setTotalImages] = useState(0);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
@@ -17,7 +17,7 @@ const useFetch = (url, limit = null) => {
             })
             .then(data => {
                 setData(limit ? data.slice(0, limit) : data);
-                setTotalImages(data.length); // Update the total number of images
+                setTotalImages(data.length);
                 setIsPending(false);
                 setError(null);
             })
@@ -31,7 +31,7 @@ const useFetch = (url, limit = null) => {
         return () => abortCont.abort();
     }, [url, limit]);
 
-    return { data, totalImages, isPending, error }; // Return totalImages as well
+    return { data, totalImages, isPending, error };
 }
 
 export default useFetch;

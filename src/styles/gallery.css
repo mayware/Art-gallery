@@ -22,6 +22,17 @@
     background-size: cover;
 }
 
+.gallery-banner-text {
+    position: absolute;
+    color: #ced4da;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .5mm;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .gallery-set {
     display: flex;
     align-items: center;
