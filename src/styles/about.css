@@ -11,24 +11,12 @@
     /* min-height: 100vh; */
     padding: 1rem;
     position: relative;
-    /* border: 1px solid #fff; */
-}
-
-.about-left {
-    display: flex;
-    align-items: center;
-    grid-column: 1/4;
-    /* max-width: 450px; */
-    height: 700px;
-    /* border: 1px solid #fff; */
 }
 
 .about-right {
     grid-column: 4/9;
-    max-height: 650px;
-    /* max-width: 750px; */
+    max-height: 600px;
     animation: fadeIn 5s;
-    /* border: 1px solid #fff; */
 }
 
 .about-author-illustration {
@@ -42,18 +30,27 @@
     object-fit: fill;
 }
 
+.about-left {
+    display: flex;
+    align-items: center;
+    grid-column: 1/4;
+    height: 700px;
+}
+
 .author-information-text {
     color: #ced4da;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: .3mm;
     line-height: 1.5;
     font-family: 'Roboto', sans-serif !important;
+    opacity: 0;
+    filter: blur(8px);
+    animation: fadeInBlur 1s ease-in-out forwards;
 }
 
 .about-brief-description {
     padding: 1rem;
-    /* border: 1px solid #fff; */
 }
 
 .about-brief-desc-text {
@@ -73,5 +70,17 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
     }
 }
