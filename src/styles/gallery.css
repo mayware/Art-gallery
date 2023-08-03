@@ -12,9 +12,7 @@
     min-width: 1200px;
     padding-bottom: 1rem;
     background: #000;
-    opacity: 0;
-    filter: blur(8px);
-    animation: fadeInBlur 1s ease-in-out forwards;
+    animation: fadeIn 5s;
 }
 
 .gallery-banner {
@@ -33,6 +31,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
 }
 
 .gallery-banner-quote-text {
@@ -107,17 +106,5 @@
 
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes fadeInBlur {
-    0% {
-        opacity: 0;
-        filter: blur(8px);
-    }
-
-    100% {
-        opacity: 1;
-        filter: blur(0);
     }
 }

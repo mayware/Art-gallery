@@ -7,7 +7,11 @@ const Contact = () => {
 
     return (
         <div className="content">
-            <div className="contect-content"></div>
+            <div className="contact-content">
+                <div className="contact-form-box">
+                    <form action="POST" className="contact-form"></form>
+                </div>
+            </div>
         </div>
     );
 }
