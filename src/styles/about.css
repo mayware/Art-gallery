@@ -10,9 +10,17 @@
     position: relative;
 }
 
+.about-left {
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    max-height: 700px;
+}
+
 .about-right {
-    height: 600px;
-    width: 750px;
+    max-height: 700px;
+    max-width: 750px;
+    animation: fadeIn 5s;
 }
 
 .about-author-illustration {
@@ -26,11 +34,21 @@
     object-fit: fill;
 }
 
-.about-left {
-    position: absolute;
-    left: 15px;
-}
-
 .author-information-text {
     color: #ced4da;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: .3mm;
+    line-height: 2;
+    font-family: 'Edu SA Beginner', cursive !important;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

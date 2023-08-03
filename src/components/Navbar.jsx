@@ -15,6 +15,7 @@ const Navbar = () => {
                     <div className="navbar-brand-name">
                         <NavLink to="/" className="nav-brand-link">
                             <span className="nav-brand-name-title">DagHol</span>
+
                         </NavLink>
                     </div>
                 </div>
@@ -41,7 +42,7 @@ const Navbar = () => {
                     <div className="navbar-links-social">
                         <Link to="{}" className='nav-link'>
                             <span className='social-link-title'>
-                                <i class="fa-brands fa-wikipedia-w"></i>
+                                <i className="fa-brands fa-wikipedia-w"></i>
                             </span>
                         </Link>
                         <Link to="{}" className='nav-link'>

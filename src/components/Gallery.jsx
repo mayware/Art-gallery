@@ -38,9 +38,12 @@ const Gallery = () => {
             <div className="gallery-content">
                 <div className="gallery-box">
                     <div className="gallery-banner">
-                        <span className="gallery-banner-text">
-                            "Whoever marries the spirit of this age will find himself a widower in the next." , Soeren Kierkegaard
-                        </span>
+                        <div className="gallery-banner-quote">
+                            <span className="gallery-banner-quote-text">
+                                "Whoever marries the spirit of this age will find himself a widower in the next."
+                            </span>
+                            <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
+                        </div>
                     </div>
                     <div className="gallery-set">
                         <div className="filter-tab">

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
 .gallery-content {
     width: 100vw;
 }
@@ -22,15 +24,35 @@
     background-size: cover;
 }
 
-.gallery-banner-text {
+.gallery-banner-quote {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    color: #ced4da;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: .5mm;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: fadeIn 5s;
+}
+
+.gallery-banner-quote-text {
+    font-family: 'Special Elite', cursive !important;
+    color: #ced4da;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: .5mm;
+    text-align: justify;
+}
+
+.gallery-banner-quote-author {
+    width: 100%;
+    text-align: end;
+    font-style: italic;
+    font-family: 'Special Elite', cursive !important;
+    color: #ced4da;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .5mm;
+    /* border: 1px solid #fff; */
 }
 
 .gallery-set {
