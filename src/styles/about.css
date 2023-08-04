@@ -8,7 +8,6 @@
 .about-block {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    /* min-height: 100vh; */
     padding: 1rem;
     position: relative;
 }

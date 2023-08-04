@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import '../styles/contact.css';
 const Contact = () => {
 
     useEffect(() => {
@@ -8,6 +9,13 @@ const Contact = () => {
     return (
         <div className="content">
             <div className="contact-content">
+                <div className="contact-illustration">
+                    <div className="contact-illustration-headline">
+                        <span className="contact-headline-text">
+
+                        </span>
+                    </div>
+                </div>
                 <div className="contact-form-box">
                     <form action="POST" className="contact-form"></form>
                 </div>
