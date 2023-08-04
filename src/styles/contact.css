@@ -1,15 +1,26 @@
 .contact-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-items: center;
     width: 100vw;
     height: 100vh;
     padding: 1rem;
     border: 1px solid #fff;
 }
 
+.contact-left {
+    grid-column: 1/4;
+    width: 100%;
+    border: 1px solid #fff;
+}
+
+.contact-right {
+    grid-column: 4/9;
+    width: 100%;
+    border: 1px solid #fff;
+}
+
 .contact-form-box {
     height: 800px;
     width: 100%;
-    border: 1px solid #fff;
 }
