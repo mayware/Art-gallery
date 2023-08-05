@@ -30,6 +30,7 @@ const Contact = () => {
                             <input type="email" name="email-field" className="contact-input-field" required />
                             <label htmlFor="textarea-field" className="contact-field-label">Comment or Message</label>
                             <textarea cols="30" rows="10" name="textarea-field" className="contact-textarea-field" required></textarea>
+                            <input type="submit" className="contact-submit-btn" value="Send" />
                         </form>
                     </div>
                 </div>
