@@ -10,11 +10,45 @@ const Contact = () => {
         <div className="content">
             <div className="contact-content">
                 <div className="contact-left">
-                    <div className="contact-illustration">
-                        <div className="contact-illustration-headline">
-                            <span className="contact-headline-text">
-
+                    <div className="contact-details">
+                        <div className="contact-detail-info">
+                            <span className="contact-detail-icon">
+                                <i class="fa-solid fa-location-dot"></i>
                             </span>
+                            <div className="contact-detail-key-value">
+                                <div className="contact-detail-key">
+                                    <span className="contact-detail-key-text">Address</span>
+                                </div>
+                                <div className="contact-detail-value">
+                                    <span className="contact-detail-value-text">Nils Lauritssøns vei 26, 0854 Oslo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="contact-detail-info">
+                            <span className="contact-detail-icon">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </span>
+                            <div className="contact-detail-key-value">
+                                <div className="contact-detail-key">
+                                    <span className="contact-detail-key-text">Phone</span>
+                                </div>
+                                <div className="contact-detail-value">
+                                    <span className="contact-detail-value-text">+47 99 29 99 92</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="contact-detail-info">
+                            <span className="contact-detail-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <div className="contact-detail-key-value">
+                                <div className="contact-detail-key">
+                                    <span className="contact-detail-key-text">Email</span>
+                                </div>
+                                <div className="contact-detail-value">
+                                    <span className="contact-detail-value-text">dag@daghol.no</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
