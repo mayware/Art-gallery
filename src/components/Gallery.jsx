@@ -1,5 +1,6 @@
 import '../styles/gallery.css';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import useFetch from '../useFetch';
 import GalleryImages from './GalleryImages';
 import Filterbar from './Filterbar';
@@ -10,6 +11,10 @@ const Gallery = () => {
     const { data: images, totalImages, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539', imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const categoryParam = searchParams.get('category');
+    const [activeButton, setActiveButton] = useState('All');
 
     function openModal(image) {
         setModalVisibility(true);
@@ -28,10 +33,17 @@ const Gallery = () => {
             setImageNumber(imageNumber + 12);
         }
     }
+    function changeFilter(filterBtn) {
+        setActiveButton(filterBtn);
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [])
+
+        if (categoryParam) {
+            setActiveButton(categoryParam);
+        }
+    }, [categoryParam]);
 
     return (
         <div className="content">
@@ -47,7 +59,7 @@ const Gallery = () => {
                     </div>
                     <div className="gallery-set">
                         <div className="filter-tab">
-                            <Filterbar />
+                            <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
                         </div>
                         {images && <GalleryImages images={images} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}

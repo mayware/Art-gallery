@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/filterbar.css';
 
-const Filterbar = () => {
-    const [activeButton, setActiveButton] = useState('All');
+const Filterbar = ({ activeButton, changeFilter }) => {
 
     const handleButtonClick = (buttonName) => {
-        setActiveButton(buttonName);
+        changeFilter(buttonName);
     };
 
     return (

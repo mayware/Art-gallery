@@ -37,13 +37,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    -webkit-box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1)
-}
-
-.category-images {
-    border: 1px solid yellow;
+    -webkit-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
+    box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
 }
 
 .home-art-categories {
@@ -51,15 +47,30 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    height: 800px;
     width: 100%;
-    border: 1px solid #fff;
 }
 
 .category-illustration {
     position: relative;
-    height: 250px;
-    width: 350px;
+    height: 275px;
+    width: 375px;
+    margin: .7rem;
     overflow: hidden;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: 1s all 0.8s;
+    border: 1px solid #4a4e69;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
+    box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
+}
+
+.category-illustration.show {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.3s;
 }
 
 .overlay {

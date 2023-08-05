@@ -1,13 +1,18 @@
-const Homeimages = ({ categoryImages }) => {
+import { Link } from "react-router-dom";
+const Homeimages = ({ categoryImages, showImages }) => {
     return (
         <>
             {categoryImages.map((image) => (
-                <div className="category-illustration" key={image.id}>
+                <Link to={{
+                    pathname: '/gallery',
+                    search: `?category=${encodeURIComponent(image.title)}`,
+                }} className={`category-illustration ${showImages ? 'show' : ''}`}
+                    key={image.id}>
                     <div className="overlay">
-                        <span className="image-title">Image title</span>
+                        <span className="image-title">{image.title}</span>
                     </div>
                     <img src={image.image} className='category-img' alt="" />
-                </div>
+                </Link>
             ))}
         </>
     );
