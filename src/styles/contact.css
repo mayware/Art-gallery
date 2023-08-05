@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    animation: fadeIn 5s;
 }
 
 .contact-left {
@@ -189,4 +190,14 @@
     -moz-box-shadow: 0px 0px 25px 0px rgba(148, 27, 12, 1);
     box-shadow: 0px 0px 25px 0px rgba(148, 27, 12, 1);
     transition: 200ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

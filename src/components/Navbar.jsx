@@ -40,12 +40,12 @@ const Navbar = () => {
                         </NavLink>
                     </div>
                     <div className="navbar-links-social">
-                        <Link to="{}" className='nav-link'>
+                        <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-link' target='_blank'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-wikipedia-w"></i>
                             </span>
                         </Link>
-                        <Link to="{}" className='nav-link'>
+                        <Link to="https://www.facebook.com/dag.hol.7?fref=ts" target='_blank' className='nav-link'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>
