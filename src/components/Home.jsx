@@ -13,10 +13,13 @@ const Home = () => {
         <div className="content">
             <div className="home-content">
                 <div className="home-banner">
-                    <div className="banner-image"></div>
+                    <div className="home-banner-image"></div>
                 </div>
+                {/* <div className="home-brief-information-box">
+
+                </div> */}
                 <div className="home-category-area">
-                    <div className="art-categories">
+                    <div className="home-art-categories">
                         {categoryImages && <Homeimages categoryImages={categoryImages} />}
                     </div>
                 </div>

@@ -89,8 +89,23 @@ const CV = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="cv-desc-footer">
-
+                                <div className="cv-desc-additional">
+                                    <div className="cv-desc-title">
+                                        <span className="cv-desc-title-text">
+                                            Group exhibitions:
+                                        </span>
+                                    </div>
+                                    <ul className="cv-desc-body-info-list">
+                                        <li className="cv-desc-list-item">
+                                            Medici Gallery, London, 2010
+                                        </li>
+                                        <li className="cv-desc-list-item">
+                                            Gallery Biba, Palm Beach, Florida, USA, 2007
+                                        </li>
+                                        <li className="cv-desc-list-item">
+                                            Addington Gallery, Chicago, USA, 1999.
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

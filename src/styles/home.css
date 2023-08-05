@@ -13,7 +13,7 @@
     animation: fadeIn 5s;
 }
 
-.banner-image {
+.home-banner-image {
     height: 650px;
     width: 100vw;
     position: relative;
@@ -21,37 +21,44 @@
     overflow: hidden;
 }
 
-.banner-img {
-    height: 100%;
-    width: 100%;
-    object-fit: fill;
+.home-brief-information-box {
+    height: 400px;
+
+}
+
+.home-brief-info-intro-text {
+    text-align: center;
+    font-size: 14px;
+    color: #eb5e28;
 }
 
 .home-category-area {
-    position: relative;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
     -webkit-box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1);
-    box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px -75px 75px 0px rgba(0, 0, 0, 1)
 }
 
 .category-images {
     border: 1px solid yellow;
 }
 
-.art-categories {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
-    justify-items: center;
+.home-art-categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #fff;
 }
 
 .category-illustration {
     position: relative;
-    height: 300px;
-    width: 425px;
+    height: 250px;
+    width: 350px;
     overflow: hidden;
 }
 

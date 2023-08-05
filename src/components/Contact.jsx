@@ -13,7 +13,7 @@ const Contact = () => {
                     <div className="contact-details">
                         <div className="contact-detail-info">
                             <span className="contact-detail-icon">
-                                <i class="fa-solid fa-location-dot"></i>
+                                <i className="fa-solid fa-location-dot"></i>
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
@@ -26,7 +26,7 @@ const Contact = () => {
                         </div>
                         <div className="contact-detail-info">
                             <span className="contact-detail-icon">
-                                <i class="fa-solid fa-phone-volume"></i>
+                                <i className="fa-solid fa-phone-volume"></i>
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
@@ -39,7 +39,7 @@ const Contact = () => {
                         </div>
                         <div className="contact-detail-info">
                             <span className="contact-detail-icon">
-                                <i class="fa-solid fa-envelope"></i>
+                                <i className="fa-solid fa-envelope"></i>
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
