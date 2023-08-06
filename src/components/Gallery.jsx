@@ -7,8 +7,8 @@ import Filterbar from './Filterbar';
 import Modal from './Modal';
 
 const Gallery = () => {
-    const [imageNumber, setImageNumber] = useState(4);
-    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber);
+    const [imageNumber, setImageNumber] = useState(12);
+    const { data: galleryImages, totalImages, error, isPending } = useFetch(`https://api.npoint.io/7873dbcb044096724539`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const location = useLocation();

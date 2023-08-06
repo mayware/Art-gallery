@@ -17,6 +17,8 @@ const useFetch = (url, limit = null) => {
                 return response.json();
             })
             .then(data => {
+                setData(limit ? data.slice(0, limit) : data);
+                setTotalImages(data.length);
                 setGalleryData(limit ? data.images.slice(0, limit) : data)
                 setTotalImages(data.images.length);
                 setIsPending(false);
@@ -29,7 +31,7 @@ const useFetch = (url, limit = null) => {
         return () => abortCont.abort();
     }, [url, limit]);
 
-    return { galleryData, totalImages, isPending, error };
+    return { galleryData, data, totalImages, isPending, error };
 };
 
 export default useFetch;
