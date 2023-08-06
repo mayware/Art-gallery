@@ -8,7 +8,7 @@ import Modal from './Modal';
 
 const Gallery = () => {
     const [imageNumber, setImageNumber] = useState(12);
-    const { data: images, totalImages, error, pending } = useFetch('https://api.npoint.io/7873dbcb044096724539', imageNumber);
+    const { data: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const location = useLocation();
@@ -29,7 +29,7 @@ const Gallery = () => {
     }
 
     function showMoreImages() {
-        if (images && images.length < totalImages) {
+        if (galleryImages && galleryImages.length < totalImages) {
             setImageNumber(imageNumber + 12);
         }
     }
@@ -61,15 +61,15 @@ const Gallery = () => {
                         <div className="filter-tab">
                             <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
                         </div>
-                        {images && <GalleryImages images={images} openModal={openModal} />}
+                        {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}
                             selectedImage={selectedImage}
-                            images={images}
+                            galleryImages={galleryImages}
                             openModal={openModal} />}
                     </div>
                     <div className="gallery-box-footer">
                         <div className="gallery-images-uploader">
-                            {images && images.length < totalImages && (
+                            {galleryImages && galleryImages.length < totalImages && (
                                 <button className="gallery-show-more-btn" onClick={showMoreImages}>
                                     <span className="show-more-btn-title">Show more</span>
                                     <i className="fa-solid fa-chevron-down"></i>
