@@ -7,7 +7,7 @@ import Filterbar from './Filterbar';
 import Modal from './Modal';
 
 const Gallery = () => {
-    const [imageNumber, setImageNumber] = useState(12);
+    const [imageNumber, setImageNumber] = useState(4);
     const { data: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);

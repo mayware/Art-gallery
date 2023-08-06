@@ -3,7 +3,7 @@ import '../styles/galleryset.css';
 const GalleryImages = ({ galleryImages, openModal }) => {
     return (
         <div className="gallery-images">
-            {galleryImages.images.map((image) => (
+            {galleryImages.map((image) => (
                 <button className="gallery-image-box" onClick={() => openModal(image)} key={image.id}>
                     <div className="gallery-image-pic">
                         <img className='gallery-image-img' src={image.link} alt="gallery-image" />
