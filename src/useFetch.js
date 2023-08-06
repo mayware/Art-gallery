@@ -5,6 +5,7 @@ const useFetch = (url, limit = null) => {
     const [totalImages, setTotalImages] = useState(0);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
+    const [galleryData, setGalleryData] = useState(null);
 
     useEffect(() => {
         const abortCont = new AbortController();
@@ -16,7 +17,7 @@ const useFetch = (url, limit = null) => {
                 return response.json();
             })
             .then(data => {
-                setData(limit ? data.images.slice(0, limit) : data);
+                setGalleryData(limit ? data.images.slice(0, limit) : data)
                 setTotalImages(data.images.length);
                 setIsPending(false);
                 setError(null);
@@ -28,7 +29,7 @@ const useFetch = (url, limit = null) => {
         return () => abortCont.abort();
     }, [url, limit]);
 
-    return { data, totalImages, isPending, error };
+    return { galleryData, totalImages, isPending, error };
 };
 
 export default useFetch;
