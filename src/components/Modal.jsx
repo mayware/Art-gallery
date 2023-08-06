@@ -1,20 +1,20 @@
 import '../styles/modal.css';
 
-const Modal = ({ closeModal, selectedImage, images, openModal }) => {
-    const currentIndex = images.findIndex((image) => image.id === selectedImage.id);
+const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
+    const currentIndex = galleryImages.findIndex((image) => image.id === selectedImage.id);
 
     const handleNext = () => {
-        const nextIndex = (currentIndex + 1) % images.length;
-        openModal(images[nextIndex]);
+        const nextIndex = (currentIndex + 1) % galleryImages.length;
+        openModal(galleryImages[nextIndex]);
     };
 
     const handlePrev = () => {
-        const prevIndex = (currentIndex - 1 + images.length) % images.length;
-        openModal(images[prevIndex]);
+        const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        openModal(galleryImages[prevIndex]);
     };
 
     const isPrevButtonDisabled = currentIndex === 0;
-    const isNextButtonDisabled = currentIndex === images.length - 1;
+    const isNextButtonDisabled = currentIndex === galleryImages.length - 1;
 
     return (
         <div className="modal">
@@ -41,6 +41,7 @@ const Modal = ({ closeModal, selectedImage, images, openModal }) => {
                             </div>
                             <div className="modal-image-desc-size">
                                 {selectedImage.size}
+                                {/* {selectedImage.category} */}
                             </div>
                         </span>
                         <button className="modal-nav-btn" onClick={handleNext} disabled={isNextButtonDisabled}>

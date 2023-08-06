@@ -16,6 +16,9 @@ const Gallery = () => {
     const categoryParam = searchParams.get('category');
     const shouldScroll = location.state && location.state.scroll;
     const [activeButton, setActiveButton] = useState('All');
+    const filteredImages = activeButton === 'All'
+        ? galleryImages
+        : galleryImages.filter(image => image.category === activeButton);
 
     function openModal(image) {
         setModalVisibility(true);
@@ -34,6 +37,7 @@ const Gallery = () => {
             setImageNumber(imageNumber + 12);
         }
     }
+
     function changeFilter(filterBtn) {
         setActiveButton(filterBtn);
     }
@@ -41,15 +45,6 @@ const Gallery = () => {
     useEffect(() => {
         if (categoryParam) {
             setActiveButton(categoryParam);
-        }
-
-        if (shouldScroll) {
-            // Find the filter tab element and scroll to it
-            const filterTabElement = document.querySelector(".filter-tab");
-            if (filterTabElement) {
-                window.scrollTo(0, 0);
-                // filterTabElement.scrollIntoView({ behavior: "smooth" });
-            }
         }
     }, [categoryParam, shouldScroll]);
 
@@ -69,7 +64,8 @@ const Gallery = () => {
                         <div className="filter-tab">
                             <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
                         </div>
-                        {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />}
+                        {filteredImages && <GalleryImages galleryImages={filteredImages} openModal={openModal} />}
+                        {/* {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />} */}
                         {modalVisibility && <Modal closeModal={closeModal}
                             selectedImage={selectedImage}
                             galleryImages={galleryImages}

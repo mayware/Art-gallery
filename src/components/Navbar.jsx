@@ -39,6 +39,14 @@ const Navbar = () => {
                             <span className="nav-link-title">Contact</span>
                         </NavLink>
                     </div>
+                    <div className="navbar-language-box">
+                        <select className="language-select">
+                            <option value="EN">EN</option>
+                            <option value="NO">NO</option>
+                            <option value="CN">CN</option>
+                            <option value="HN">HN</option>
+                        </select>
+                    </div>
                     <div className="navbar-links-social">
                         <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-link' target='_blank'>
                             <span className='social-link-title'>

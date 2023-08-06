@@ -9,7 +9,7 @@
 
 .home-banner {
     background-image: url('../assets/bg2.jpg');
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -37,8 +37,8 @@
     font-size: 18px;
     font-weight: 700;
     font-family: 'Philosopher', sans-serif !important;
-    color: #f4a261;
-    text-shadow: 0px 0px 30px rgba(235, 94, 40, 1);
+    color: #e0e1dd;
+    text-shadow: 0px 0px 30px rgba(49, 95, 154, 1);
     opacity: 0;
     filter: blur(8px);
     animation: fadeInBlur 1s ease-in-out forwards;

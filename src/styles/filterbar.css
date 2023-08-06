@@ -24,6 +24,7 @@
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
+    margin: .5rem;
     transition: 200ms ease-in-out;
 }
 
