@@ -14,6 +14,7 @@ const Gallery = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const categoryParam = searchParams.get('category');
+    const shouldScroll = location.state && location.state.scroll;
     const [activeButton, setActiveButton] = useState('All');
 
     function openModal(image) {
@@ -38,12 +39,19 @@ const Gallery = () => {
     }
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-
         if (categoryParam) {
             setActiveButton(categoryParam);
         }
-    }, [categoryParam]);
+
+        if (shouldScroll) {
+            // Find the filter tab element and scroll to it
+            const filterTabElement = document.querySelector(".filter-tab");
+            if (filterTabElement) {
+                window.scrollTo(0, 0);
+                // filterTabElement.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [categoryParam, shouldScroll]);
 
     return (
         <div className="content">
