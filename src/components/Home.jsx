@@ -18,7 +18,7 @@ const Home = () => {
                 <div className="home-category-area">
                     <div className="home-brief-information-box">
                         <span className="home-brief-info-text">
-                            Dag Hols art might seem old fashion today, but he is convinced that his visions are timeless and will survive our restless and superficial time....
+                            Dag Hol's art might seem old fashion today, but he is convinced that his visions are timeless and will survive our restless and superficial time....
                         </span>
                     </div>
                     <div className="home-main-information-box">

@@ -5,8 +5,7 @@ const Homeimages = ({ categoryImages }) => {
             {categoryImages.map((image) => (
                 <Link to={{
                     pathname: '/gallery',
-                    search: `?category=${encodeURIComponent(image.title)}`,
-                    state: { scroll: true }
+                    search: `?category=${image.category}`
                 }} className="category-illustration"
                     key={image.id}>
                     <div className="overlay">

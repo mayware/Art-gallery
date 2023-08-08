@@ -1,6 +1,6 @@
 import '../styles/gallery.css';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import useFetch from '../useFetch';
 import GalleryImages from './GalleryImages';
 import Filterbar from './Filterbar';
@@ -11,11 +11,18 @@ const Gallery = () => {
     const { data: galleryImages, totalImages, error, isPending } = useFetch(`https://api.npoint.io/7873dbcb044096724539`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [activeButton, setActiveButton] = useState('All');
+
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const categoryParam = searchParams.get('category');
-    const shouldScroll = location.state && location.state.scroll;
-    const [activeButton, setActiveButton] = useState('All');
+    const categoryFromURL = searchParams.get("category");
+
+    useEffect(() => {
+        if (categoryFromURL) {
+            setActiveButton(categoryFromURL);
+        }
+    }, [categoryFromURL]);
+
     const filteredImages = activeButton === 'All'
         ? galleryImages
         : galleryImages.filter(image => image.category === activeButton);
@@ -42,12 +49,6 @@ const Gallery = () => {
         setActiveButton(filterBtn);
     }
 
-    useEffect(() => {
-        if (categoryParam) {
-            setActiveButton(categoryParam);
-        }
-    }, [categoryParam, shouldScroll]);
-
     return (
         <div className="content">
             <div className="gallery-content">
@@ -65,7 +66,6 @@ const Gallery = () => {
                             <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
                         </div>
                         {filteredImages && <GalleryImages galleryImages={filteredImages} openModal={openModal} />}
-                        {/* {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />} */}
                         {modalVisibility && <Modal closeModal={closeModal}
                             selectedImage={selectedImage}
                             galleryImages={galleryImages}
