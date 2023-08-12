@@ -18,8 +18,8 @@ const Filterbar = ({ activeButton, changeFilter }) => {
                     All
                 </button>
                 <button
-                    className={`filter-btn ${activeButton === 'Oil paintings' ? 'active' : ''}`}
-                    onClick={() => handleButtonClick('Oil paintings')}
+                    className={`filter-btn ${activeButton === 'Oil Paintings' ? 'active' : ''}`}
+                    onClick={() => handleButtonClick('Oil Paintings')}
                 >
                     Oil Paintings
                 </button>

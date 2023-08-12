@@ -19,6 +19,7 @@ const Gallery = () => {
 
     useEffect(() => {
         if (categoryFromURL) {
+            console.log(categoryFromURL);
             setActiveButton(categoryFromURL);
         }
     }, [categoryFromURL]);
