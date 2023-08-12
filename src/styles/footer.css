@@ -1,5 +1,5 @@
 .footer {
-    height: 200px;
+    min-height: 200px;
     border-top: 1px solid #4a4e69;
     background: #101010;
 }
@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    padding: 1rem;
 }
 
 .footer-left {
@@ -65,4 +66,20 @@
     font-size: 16px;
     font-weight: 500;
     color: #e0e1dd;
+}
+
+@media(max-width: 960px) {
+
+    .footer-left,
+    .footer-right,
+    .footer-middle {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

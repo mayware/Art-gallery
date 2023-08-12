@@ -59,7 +59,14 @@
     line-height: 1.9;
     text-align: justify;
     font-family: 'Edu SA Beginner', cursive !important;
-    /* letter-spacing: .3mm; */
+}
+
+.about-host-name {
+    margin-right: .5rem;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif !important;
+    color: #f4a261;
 }
 
 @keyframes fadeIn {

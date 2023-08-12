@@ -14,7 +14,8 @@ const About = () => {
                     <div className="about-left">
                         <div className="about-information">
                             <span className="author-information-text">
-                                Dag Hol (born 26 October 1951, in Hamburg) is a Norwegian figurative painter and graphic artist. He is educated at the Norwegian National Academy of Fine Arts (1980-1984) and has been a student of Gunnar Dietrichson and Odd Nerdrum. Earlier he studied Nordic, French, German and Sanskrit language and literature at the University of Oslo.
+                                <span className="about-host-name">Dag Hol</span>
+                                (born 26 October 1951, in Hamburg) is a Norwegian figurative painter and graphic artist. He is educated at the Norwegian National Academy of Fine Arts (1980-1984) and has been a student of Gunnar Dietrichson and Odd Nerdrum. Earlier he studied Nordic, French, German and Sanskrit language and literature at the University of Oslo.
                                 <br></br>
                                 <br></br>He has since he was 18–19 years old practised yoga and Acem-meditation regularly and this has influenced his artistic and philosophical point of view. He made his debut as an artist with his solo exhibition in 1983 in Oslo. Dag Hol is focusing on the Art of Doing in all his work, and opposes to the modern trend of putting the concept in the focus and main purpose in modern art, which he sees as too much linked to our age.
                             </span>
