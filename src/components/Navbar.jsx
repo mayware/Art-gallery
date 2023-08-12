@@ -48,23 +48,23 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
                         </select>
                     </div>
                     <div className="navbar-links-social">
-                        <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-link' target='_blank'>
-                            <span className='social-link-title'>
-                                <i className="fa-brands fa-wikipedia-w"></i>
-                            </span>
-                        </Link>
                         <Link to="https://www.facebook.com/dag.hol.7?fref=ts" target='_blank' className='nav-link'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>
                         </Link>
+                        <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-link' target='_blank'>
+                            <span className='social-link-title'>
+                                <i className="fa-brands fa-wikipedia-w"></i>
+                            </span>
+                        </Link>
                     </div>
-                    <div className="sidebar-toggle-button">
-                        <button className="sidebar-btn" onClick={toggleSidebar}>
-                            {!sidebarBtnIcon && <i className="fa-solid fa-bars"></i>}
-                            {sidebarBtnIcon && <i class="fa-solid fa-xmark"></i>}
-                        </button>
-                    </div>
+                </div>
+                <div className="sidebar-toggle-button">
+                    <button className="sidebar-btn" onClick={toggleSidebar}>
+                        {!sidebarBtnIcon && <i className="fa-solid fa-bars"></i>}
+                        {sidebarBtnIcon && <i className="fa-solid fa-xmark"></i>}
+                    </button>
                 </div>
             </div>
         </nav>

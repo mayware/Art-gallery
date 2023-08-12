@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery"
 import Contact from "./components/Contact";
@@ -12,6 +12,21 @@ import Footer from "./components/Footer";
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
   const [sidebarBtnIcon, setSidebarBtnIcon] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) {
+        setSidebarVisbility(false);
+        setSidebarBtnIcon(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   function toggleSidebar() {
     setSidebarVisbility(!sidebarVisibility);

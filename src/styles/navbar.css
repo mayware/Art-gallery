@@ -35,6 +35,7 @@
 }
 
 .navbar-right {
+    display: flex;
     margin-right: 10rem;
 }
 
@@ -67,12 +68,6 @@
     color: #e0e1dd;
 }
 
-.nav-right {
-    display: flex;
-    align-items: center;
-    margin-right: 15rem;
-}
-
 .language-select {
     height: 25px;
     width: 50px;
@@ -102,7 +97,7 @@
 }
 
 .sidebar-btn {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 45px;
@@ -119,4 +114,33 @@
 .sidebar-btn:hover {
     color: #8d99ae;
     transition: 200ms ease-in-out;
+}
+
+@media(max-width: 1100px) {
+    .nav-link {
+        margin: .1rem;
+    }
+
+    .navbar-left {
+        margin-left: 1rem;
+    }
+}
+
+@media(max-width: 960px) {
+
+    .sidebar-btn {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-right {
+        margin-right: 1rem;
+    }
+
+    .navbar-left {
+        margin-left: 1rem;
+    }
 }

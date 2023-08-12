@@ -31,12 +31,22 @@
     font-weight: 500;
     color: #e0e1dd;
     text-decoration: none;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fade-in 0.7s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
     transition: 200ms ease-in-out;
 }
 
 .sidebar-link:hover {
     color: #9a8c98;
     transition: 200ms ease-in-out;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 .sidebar-social-links {
@@ -46,3 +56,9 @@
     height: 50px;
     width: 100%;
 }
+
+/* @media(min-width: 960px) {
+    .sidebar {
+        display: none;
+    }
+} */
