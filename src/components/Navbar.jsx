@@ -1,7 +1,7 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
     const location = useLocation();
 
     const isActive = (path) => {
@@ -58,6 +58,11 @@ const Navbar = () => {
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>
                         </Link>
+                    </div>
+                    <div className="sidebar-toggle-button">
+                        <button className="sidebar-btn" onClick={toggleSidebar}>
+                            <i className="fa-solid fa-bars"></i>
+                        </button>
                     </div>
                 </div>
             </div>

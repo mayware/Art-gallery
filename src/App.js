@@ -1,18 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Home from "./components/Home";
 import Gallery from "./components/Gallery"
 import Contact from "./components/Contact";
 import About from "./components/About";
 import CV from "./components/CV";
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
 function App() {
+  const [sidebarVisibility, setSidebarVisbility] = useState(false);
+  function toggleSidebar() {
+    setSidebarVisbility(!sidebarVisibility);
+  }
   return (
     <BrowserRouter>
       <div className="App">
         <div className="container">
-          <Navbar />
+          <Navbar toggleSidebar={toggleSidebar} />
+          {sidebarVisibility && <Sidebar />}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />

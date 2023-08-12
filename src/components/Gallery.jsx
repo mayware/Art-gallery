@@ -25,7 +25,7 @@ const Gallery = () => {
 
     const filteredImages = activeButton === 'All'
         ? galleryImages
-        : galleryImages.filter(image => image.category === activeButton);
+        : galleryImages ? galleryImages.filter(image => image.category === activeButton) : [];
 
     function openModal(image) {
         setModalVisibility(true);
