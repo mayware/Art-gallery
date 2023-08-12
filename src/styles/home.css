@@ -7,11 +7,15 @@
     justify-content: center;
 }
 
-.home-banner {}
+.home-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .home-banner-image {
-    height: 650px;
-    width: 100%;
+    height: 750px;
+    width: 100vw;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -24,24 +28,13 @@
     object-fit: fill;
 }
 
-.home-brief-information-box {
+.home-intro-information-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
-    width: 1150px;
+    min-height: 100px;
+    max-width: 1150px;
     margin-bottom: 10rem;
-}
-
-.home-brief-info-text {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Philosopher', sans-serif !important;
-    color: #e0e1dd;
-    text-shadow: 0px 0px 30px rgba(49, 95, 154, 1);
-    opacity: 0;
-    filter: blur(8px);
-    animation: fadeInBlur 1s ease-in-out forwards;
 }
 
 .home-main-information-box {
@@ -78,16 +71,17 @@
     min-height: 600px;
     width: 100%;
     padding: 4rem;
+
 }
 
 .category-illustration {
     position: relative;
-    height: 250px;
+    height: 450px;
     width: 375px;
     margin: .7rem;
     overflow: hidden;
     border: 1px solid #000;
-    border-radius: 20px;
+    border-radius: 5px;
     -webkit-box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
     -moz-box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
     box-shadow: 0px 0px 25px 0px rgba(51, 53, 66, 1);
@@ -137,7 +131,7 @@
     display: block;
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     transition: transform 0.3s;
     border-radius: 5px;
 }

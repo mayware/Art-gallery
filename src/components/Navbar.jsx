@@ -8,12 +8,16 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
         return location.pathname === path ? "active-link" : "";
     };
 
+    function scrollToTheTop() {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <nav className="navbar">
             <div className="navbar-left">
                 <div className="navbar-brand">
                     <div className="navbar-brand-name">
-                        <NavLink to="/" className="nav-brand-link">
+                        <NavLink to="/" className="nav-brand-link" onClick={scrollToTheTop}>
                             <span className="nav-brand-name-title">DagHol</span>
                         </NavLink>
                     </div>
@@ -22,19 +26,19 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
             <div className="navbar-right">
                 <div className="navbar-links">
                     <div className="navbar-page-links">
-                        <NavLink to="/" className={`nav-link ${isActive("/")}`}>
+                        <NavLink to="/" className={`nav-link ${isActive("/")}`} onClick={scrollToTheTop}>
                             <span className="nav-link-title">Home</span>
                         </NavLink>
-                        <NavLink to={"/gallery"} className={`nav-link ${isActive("/gallery")}`}>
+                        <NavLink to={"/gallery"} className={`nav-link ${isActive("/gallery")}`} onClick={scrollToTheTop}>
                             <span className="nav-link-title">Gallery</span>
                         </NavLink>
-                        <NavLink to="/about" className={`nav-link ${isActive("/cv")}`}>
+                        <NavLink to="/about" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
                             <span className="nav-link-title">About</span>
                         </NavLink>
-                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`}>
+                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
                             <span className="nav-link-title">CV</span>
                         </NavLink>
-                        <NavLink to="/contact" className={`nav-link ${isActive("/cv")}`}>
+                        <NavLink to="/contact" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
                             <span className="nav-link-title">Contact</span>
                         </NavLink>
                     </div>

@@ -20,6 +20,7 @@ function App() {
         setSidebarBtnIcon(false);
       }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
 

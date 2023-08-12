@@ -1,11 +1,6 @@
-import { useEffect } from "react";
 import '../styles/about.css';
 import authorImage from '../assets/author-image.jpg';
 const About = () => {
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
 
     return (
         <div className="content">
