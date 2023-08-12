@@ -1,7 +1,7 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
     const location = useLocation();
 
     const isActive = (path) => {
@@ -61,7 +61,8 @@ const Navbar = ({ toggleSidebar }) => {
                     </div>
                     <div className="sidebar-toggle-button">
                         <button className="sidebar-btn" onClick={toggleSidebar}>
-                            <i className="fa-solid fa-bars"></i>
+                            {!sidebarBtnIcon && <i className="fa-solid fa-bars"></i>}
+                            {sidebarBtnIcon && <i class="fa-solid fa-xmark"></i>}
                         </button>
                     </div>
                 </div>

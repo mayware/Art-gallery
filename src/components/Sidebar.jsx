@@ -1,22 +1,22 @@
 import { NavLink, Link } from 'react-router-dom';
 import '../styles/sidebar.css';
-const Sidebar = () => {
+const Sidebar = ({ toggleSidebar }) => {
     return (
         <aside className="sidebar">
             <div className="sidebar-inner">
-                <NavLink to="/" className='sidebar-link'>
+                <NavLink to="/" className='sidebar-link' onClick={toggleSidebar}>
                     <span className="nav-link-title">Home</span>
                 </NavLink>
-                <NavLink to={"/gallery"} className='sidebar-link'>
+                <NavLink to={"/gallery"} className='sidebar-link' onClick={toggleSidebar}>
                     <span className="nav-link-title">Gallery</span>
                 </NavLink>
-                <NavLink to="/about" className='sidebar-link'>
+                <NavLink to="/about" className='sidebar-link' onClick={toggleSidebar}>
                     <span className="nav-link-title">About</span>
                 </NavLink>
-                <NavLink to="/cv" className='sidebar-link'>
+                <NavLink to="/cv" className='sidebar-link' onClick={toggleSidebar}>
                     <span className="nav-link-title">CV</span>
                 </NavLink>
-                <NavLink to="/contact" className='sidebar-link'>
+                <NavLink to="/contact" className='sidebar-link' onClick={toggleSidebar}>
                     <span className="nav-link-title">Contact</span>
                 </NavLink>
                 <div className="sidebar-social-links">

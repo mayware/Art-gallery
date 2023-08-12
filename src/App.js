@@ -11,15 +11,19 @@ import Footer from "./components/Footer";
 
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
+  const [sidebarBtnIcon, setSidebarBtnIcon] = useState(false);
+
   function toggleSidebar() {
     setSidebarVisbility(!sidebarVisibility);
+    setSidebarBtnIcon(!sidebarBtnIcon)
   }
+
   return (
     <BrowserRouter>
       <div className="App">
         <div className="container">
-          <Navbar toggleSidebar={toggleSidebar} />
-          {sidebarVisibility && <Sidebar />}
+          <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} />
+          {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
