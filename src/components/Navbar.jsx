@@ -15,7 +15,6 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
                     <div className="navbar-brand-name">
                         <NavLink to="/" className="nav-brand-link">
                             <span className="nav-brand-name-title">DagHol</span>
-
                         </NavLink>
                     </div>
                 </div>
@@ -48,12 +47,12 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
                         </select>
                     </div>
                     <div className="navbar-links-social">
-                        <Link to="https://www.facebook.com/dag.hol.7?fref=ts" target='_blank' className='nav-link'>
+                        <Link to="https://www.facebook.com/dag.hol.7?fref=ts" target='_blank' className='nav-social-link'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-facebook-f"></i>
                             </span>
                         </Link>
-                        <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-link' target='_blank'>
+                        <Link to="https://en.wikipedia.org/wiki/Dag_Hol" className='nav-social-link' target='_blank'>
                             <span className='social-link-title'>
                                 <i className="fa-brands fa-wikipedia-w"></i>
                             </span>

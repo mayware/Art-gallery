@@ -47,6 +47,8 @@
 .nav-link {
     padding: .7rem;
     margin: .5rem;
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
     color: #e0e1dd;
     transition: 200ms ease-in-out;
@@ -61,21 +63,22 @@
     color: #f4a261;
 }
 
-.nav-host-name {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: .3mm;
-    color: #e0e1dd;
-}
-
 .language-select {
     height: 25px;
     width: 50px;
     padding: .1rem;
+    margin-right: 1.5rem;
     border: 1px solid #4a4e69;
     border-radius: 5px;
     background: #101010;
     color: #e0e1dd;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.language-select:focus {
+    border-color: #f4a261;
+    transition: 200ms ease-in-out;
 }
 
 .social-links {
@@ -85,10 +88,10 @@
 
 .nav-social-link {
     text-decoration: none;
-    font-size: 30px;
+    font-size: 16px;
     color: #e0e1dd;
     transition: 200ms ease-in-out;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 }
 
 .nav-social-link:hover {
