@@ -40,8 +40,7 @@ const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
                                 {selectedImage.title}
                             </div>
                             <div className="modal-image-desc-size">
-                                {selectedImage.category[0]}
-                                {/* {selectedImage.category} */}
+                                {selectedImage.image_size}
                             </div>
                         </span>
                         <button className="modal-nav-btn" onClick={handleNext} disabled={isNextButtonDisabled}>

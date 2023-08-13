@@ -1,5 +1,51 @@
 import '../styles/contact.css';
+import { useRef, useState } from 'react';
 const Contact = () => {
+
+    const [nameField, setNameField] = useState('');
+    const [emailField, setEmailField] = useState('');
+    const [textFieldField, setTextField] = useState('');
+
+    function nameFieldChange(event) {
+        setNameField(event.target.value);
+    }
+
+    function emailFieldChange(event) {
+        setEmailField(event.target.value);
+    }
+
+    function textFieldChange(event) {
+        setTextField(event.target.value);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const formData = {
+            name: nameField,
+            email: emailField,
+            body: textFieldField
+        };
+
+        fetch('https://fakeapi.lyteloli.work/form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('POST response:', data);
+                setNameField('');
+                setEmailField('');
+                setTextField('');
+            })
+            .catch(error => {
+                console.error('Error sending POST request:', error);
+            });
+    }
+
 
     return (
         <div className="content">
@@ -52,13 +98,13 @@ const Contact = () => {
                         <div className="contact-form-title">
                             <div className="contact-form-title-text">Contact Me</div>
                         </div>
-                        <form action="POST" className="contact-form">
+                        <form onSubmit={handleSubmit} className="contact-form">
                             <label htmlFor="name-field" className="contact-field-label">Name</label>
-                            <input type="text" name="name-field" className="contact-input-field" placeholder="Enter your full Name" required />
+                            <input type="text" name="name-field" value={nameField} onChange={nameFieldChange} className="contact-input-field" placeholder="Enter your full Name" required minLength='3' />
                             <label htmlFor="email-field" className="contact-field-label">Email</label>
-                            <input type="email" name="email-field" className="contact-input-field" placeholder="Enter your Email" required />
+                            <input type="email" name="email-field" value={emailField} onChange={emailFieldChange} className="contact-input-field" placeholder="Enter your Email" required />
                             <label htmlFor="textarea-field" className="contact-field-label">Comment or Message</label>
-                            <textarea cols="30" rows="10" name="textarea-field" className="contact-textarea-field" placeholder="Write something.." required></textarea>
+                            <textarea value={textFieldField} onChange={textFieldChange} cols="30" rows="10" name="textarea-field" className="contact-textarea-field" placeholder="Write something.." required></textarea>
                             <input type="submit" className="contact-submit-btn" value="SEND MESSAGE" />
                         </form>
                     </div>

@@ -81,7 +81,6 @@ const Gallery = () => {
                         <div className="gallery-images-uploader">
                             {galleryImages && galleryImages.length < totalImages && (
                                 <button className="gallery-show-more-btn" onClick={showMoreImages}>
-                                    <span className="show-more-btn-title">Show more</span>
                                     <i className="fa-solid fa-chevron-down"></i>
                                 </button>
                             )}
