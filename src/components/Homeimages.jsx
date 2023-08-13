@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const Homeimages = ({ categoryImages }) => {
     return (
         <>
@@ -6,14 +7,14 @@ const Homeimages = ({ categoryImages }) => {
                 <Link
                     to={{
                         pathname: '/gallery',
-                        search: `?category=${image.title}`
+                        search: `?category=${image.category[0]}`
                     }}
                     className="category-illustration"
                     key={image.id}>
                     <div className="overlay">
-                        <span className="image-title">{image.title}</span>
+                        <span className="image-title">{image.category[0]}</span>
                     </div>
-                    <img src={image.image} className='category-img' alt="" />
+                    <img src={image.link} className='category-img' alt="" />
                 </Link>
             ))}
         </>

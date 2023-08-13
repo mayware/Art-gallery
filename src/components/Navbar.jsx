@@ -1,8 +1,11 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import useFetch from '../useFetch';
 
-const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
+const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup }) => {
     const location = useLocation();
+
+    const { navbarBtn } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`);
 
     const isActive = (path) => {
         return location.pathname === path ? "active-link" : "";
@@ -11,6 +14,7 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
     function scrollToTheTop() {
         window.scrollTo(0, 0);
     }
+
 
     return (
         <nav className="navbar">
@@ -26,21 +30,11 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon }) => {
             <div className="navbar-right">
                 <div className="navbar-links">
                     <div className="navbar-page-links">
-                        <NavLink to="/" className={`nav-link ${isActive("/")}`} onClick={scrollToTheTop}>
-                            <span className="nav-link-title">Home</span>
-                        </NavLink>
-                        <NavLink to={"/gallery"} className={`nav-link ${isActive("/gallery")}`} onClick={scrollToTheTop}>
-                            <span className="nav-link-title">Gallery</span>
-                        </NavLink>
-                        <NavLink to="/about" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
-                            <span className="nav-link-title">About</span>
-                        </NavLink>
-                        <NavLink to="/cv" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
-                            <span className="nav-link-title">CV</span>
-                        </NavLink>
-                        <NavLink to="/contact" className={`nav-link ${isActive("/cv")}`} onClick={scrollToTheTop}>
-                            <span className="nav-link-title">Contact</span>
-                        </NavLink>
+                        {navbarBtn && navbarBtn.map((btn, index) => (
+                            <NavLink to={btn.link} className={`nav-link ${isActive("/")}`} onClick={scrollToTheTop} key={index}>
+                                <span className="nav-link-title">{btn.text}</span>
+                            </NavLink>
+                        ))}
                     </div>
                     <div className="navbar-language-box">
                         <select className="language-select">

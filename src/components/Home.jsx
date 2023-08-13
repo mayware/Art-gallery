@@ -5,7 +5,8 @@ import useFetch from '../useFetch';
 import banner from '../assets/bg2.png'
 
 const Home = () => {
-    const { data: categoryImages, error, pending } = useFetch('https://api.npoint.io/56d2ce3d37ad758ef7a9');
+    const [language, setLanguage] = useState('en');
+    const { categoryImages } = useFetch(`https://fakeapi.lyteloli.work/?lang=${language}`);
 
     useEffect(() => {
         window.scrollTo(0, 0);

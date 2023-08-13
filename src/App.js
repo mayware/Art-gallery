@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
   const [sidebarBtnIcon, setSidebarBtnIcon] = useState(false);
+  const [languageSetup, setlanguageSetup] = useState("en");
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,7 +48,7 @@ function App() {
       <ScrollToTop>
         <div className="App">
           <div className="container">
-            <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} />
+            <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} languageSetup={languageSetup} />
             {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
             <Routes>
               <Route path="/" element={<Home />} key="home" />
