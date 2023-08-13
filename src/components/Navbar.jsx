@@ -1,11 +1,12 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import useFetch from '../useFetch';
+import { useEffect } from 'react';
 
-const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup }) => {
+const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }) => {
     const location = useLocation();
 
-    const { navbarBtn } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`);
+    const { navbarBtn } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`);
 
     const isActive = (path) => {
         return location.pathname === path ? "active-link" : "";
@@ -37,11 +38,12 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup }) => {
                         ))}
                     </div>
                     <div className="navbar-language-box">
-                        <select className="language-select">
-                            <option value="EN">EN</option>
-                            <option value="NO">NO</option>
-                            <option value="CN">CN</option>
-                            <option value="HN">HN</option>
+                        <select className="language-select" value={languageSetup}
+                            onChange={(e) => changeLanguage(e.target.value)}>
+                            <option value="en">EN</option>
+                            <option value="no">NO</option>
+                            <option value="zh">ZH</option>
+                            <option value="hi">HI</option>
                         </select>
                     </div>
                     <div className="navbar-links-social">

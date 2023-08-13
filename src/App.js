@@ -43,12 +43,16 @@ function App() {
     }
   }
 
+  function changeLanguage(lng) {
+    setlanguageSetup(lng);
+  }
+
   return (
     <BrowserRouter>
       <ScrollToTop>
         <div className="App">
           <div className="container">
-            <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} languageSetup={languageSetup} />
+            <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} languageSetup={languageSetup} changeLanguage={changeLanguage} />
             {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
             <Routes>
               <Route path="/" element={<Home />} key="home" />
