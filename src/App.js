@@ -30,8 +30,15 @@ function App() {
   }, []);
 
   function toggleSidebar() {
-    setSidebarVisbility(!sidebarVisibility);
-    setSidebarBtnIcon(!sidebarBtnIcon)
+    if (sidebarVisibility) {
+      document.body.style.overflow = "auto";
+      setSidebarVisbility(!sidebarVisibility);
+      setSidebarBtnIcon(!sidebarBtnIcon);
+    } else {
+      document.body.style.overflow = "hidden";
+      setSidebarVisbility(!sidebarVisibility);
+      setSidebarBtnIcon(!sidebarBtnIcon)
+    }
   }
 
   return (
