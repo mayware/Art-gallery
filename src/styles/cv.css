@@ -3,13 +3,16 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
+    min-height: 100vh;
     padding: 1rem;
     animation: fadeIn 5s;
+    background: #000;
 }
 
 .cv-box {
     width: 900px;
     padding: .5rem;
+    background: #101010;
 }
 
 .cv-preview {
@@ -89,5 +92,39 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .cv-box {
+        width: 100%;
+        padding: 0;
+        background: #101010;
+    }
+
+    .cv-preview {
+        padding: 1rem 0;
+    }
+
+    .cv-preview-inner {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .cv-host-name {
+        margin-bottom: 2rem;
+    }
+
+    .cv-host-name-text {
+        font-size: 24px;
+    }
+
+    .cv-desc-title-text {
+        font-size: 16px;
+    }
+
+    .cv-desc-body-text,
+    .cv-desc-list-item {
+        font-size: 14px;
     }
 }

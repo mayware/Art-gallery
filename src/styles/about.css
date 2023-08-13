@@ -2,7 +2,9 @@
 
 .about-content {
     width: 100vw;
+    min-height: 100vh;
     padding: 1rem;
+    background: #000;
 }
 
 .about-block {
@@ -88,5 +90,22 @@
     100% {
         opacity: 1;
         filter: blur(0);
+    }
+}
+
+@media(max-width: 960px) {
+
+    .about-block {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1rem;
+    }
+
+    .about-left {
+        grid-column: auto;
+        height: 600px;
+    }
+
+    .about-right {
+        grid-column: auto;
     }
 }

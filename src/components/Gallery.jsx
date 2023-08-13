@@ -55,7 +55,7 @@ const Gallery = () => {
         <div className="content">
             <div className="gallery-content">
                 <div className="gallery-box">
-                    {/* <div className="gallery-banner">
+                    <div className="gallery-banner">
                         <img src={galleryBanner} alt="" className="gallery-banner-img" />
                         <div className="gallery-banner-quote">
                             <span className="gallery-banner-quote-text">
@@ -63,11 +63,11 @@ const Gallery = () => {
                             </span>
                             <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
                         </div>
-                    </div> */}
+                    </div>
                     <div className="gallery-set">
-                        {/* <div className="filter-tab">
+                        <div className="filter-tab">
                             <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
-                        </div> */}
+                        </div>
                         {filteredImages && <GalleryImages galleryImages={filteredImages} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}
                             selectedImage={selectedImage}

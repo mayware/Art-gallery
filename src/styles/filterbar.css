@@ -50,3 +50,17 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+
+@media(max-width: 768px) {
+    .filter-buttons {
+        height: 25px;
+    }
+
+    .filter-btn {
+        height: 35px;
+        width: 100px;
+        font-size: 14px;
+        font-weight: 600;
+        margin: .1rem;
+    }
+}
