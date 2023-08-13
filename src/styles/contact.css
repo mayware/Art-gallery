@@ -1,18 +1,21 @@
 .contact-content {
     display: flex;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
     animation: fadeIn 5s;
+    background: #000;
+    background-image: url('../assets//contact-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .contact-left {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 450px;
-    height: 100%;
-    padding-left: 2rem;
+    min-height: 800px;
+    margin: 0 2.5rem 0 2.5rem;
 }
 
 .contact-details {
@@ -36,7 +39,7 @@
     height: 100%;
     width: 70px;
     margin-right: 1.5rem;
-    font-size: 45px;
+    font-size: 40px;
     color: #e0e1dd;
 }
 
@@ -59,7 +62,7 @@
 }
 
 .contact-detail-key-text {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     color: #e0e1dd;
 }
@@ -74,12 +77,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 100%;
+    min-height: 800px;
+    margin-right: 2.5rem;
     overflow: hidden;
-    background-image: url('../assets//contact-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .contact-form-box {
@@ -91,7 +91,6 @@
 }
 
 .contact-form-title {
-    margin-top: 5rem;
     width: 500px;
 }
 
@@ -190,5 +189,69 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@media(max-width: 960px) {
+
+    .contact-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-left {
+        width: 100%;
+        min-height: 450px;
+        margin: 0;
+    }
+
+    .contact-detail-info {
+        margin-bottom: 1.5rem;
+        width: 350px;
+    }
+
+    .contact-detail-icon {
+        width: 45px;
+        margin-right: 1.5rem;
+        font-size: 36px;
+    }
+
+    .contact-detail-key-value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 350px;
+        max-width: 350px;
+    }
+
+    .contact-detail-key,
+    .contact-detail-value {
+        width: 100%;
+    }
+
+    .contact-detail-key {
+        margin-bottom: .3rem;
+    }
+
+    .contact-detail-key-text {
+        font-size: 20px;
+        font-weight: 500;
+        color: #e0e1dd;
+    }
+
+    .contact-right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact-form {
+        height: 600px;
+        width: 350px;
+    }
+
+    .contact-form-title {
+        margin-top: 5rem;
+        width: 350px;
     }
 }
