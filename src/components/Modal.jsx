@@ -27,7 +27,7 @@ const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
                 <div className="modal-body">
                     <div className="modal-body-image">
                         <img src={selectedImage.link} alt="modal-image" className="modal-image-img" />
-                        <a href={selectedImage.imalinkge} target='_blank' className='modal-image-fullsize-link'>
+                        <a href={selectedImage.link} target='_blank' className='modal-image-fullsize-link'>
                             <i className="fa-solid fa-expand"></i>
                         </a>
                     </div>
@@ -40,7 +40,7 @@ const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
                                 {selectedImage.title}
                             </div>
                             <div className="modal-image-desc-size">
-                                {selectedImage.size}
+                                {selectedImage.category[0]}
                                 {/* {selectedImage.category} */}
                             </div>
                         </span>

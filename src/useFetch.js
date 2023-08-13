@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (url, limit = null) => {
+const useFetch = (url, limit = null, filtered) => {
     const [data, setData] = useState(null);
     const [totalImages, setTotalImages] = useState(0);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [galleryData, setGalleryData] = useState(null);
 
+
     useEffect(() => {
         const abortCont = new AbortController();
+
         fetch(url, { signal: abortCont.signal })
             .then(response => {
                 if (!response.ok) {
@@ -17,20 +19,24 @@ const useFetch = (url, limit = null) => {
                 return response.json();
             })
             .then(data => {
-                // setData(limit ? data.slice(0, limit) : data);
-                setTotalImages(data.length);
-                setGalleryData(limit ? data.images.slice(0, limit) : data)
-                setTotalImages(data.images.length);
+                let categorizedImages = data.images;
+                if (filtered !== 'All') {
+                    categorizedImages = categorizedImages.filter(image =>
+                        image.category.includes(filtered)
+                    );
+                }
+                setGalleryData(categorizedImages);
+                setGalleryData(limit ? categorizedImages.slice(0, limit) : data)
+                setTotalImages(categorizedImages.length);
                 setIsPending(false);
                 setError(null);
-                console.log(galleryData);
             })
             .catch(error => {
                 setError(error);
                 setIsPending(false);
             });
         return () => abortCont.abort();
-    }, [url, limit]);
+    }, [url, limit, filtered]);
 
     return { galleryData, data, totalImages, isPending, error };
 };

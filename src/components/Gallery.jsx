@@ -8,11 +8,11 @@ import Modal from './Modal';
 import galleryBanner from '../assets/gallery-banner.jpg'
 
 const Gallery = () => {
-    const [imageNumber, setImageNumber] = useState(12);
-    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [activeButton, setActiveButton] = useState('All');
+    const [imageNumber, setImageNumber] = useState(12);
+    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber, activeButton);
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -20,14 +20,17 @@ const Gallery = () => {
 
     useEffect(() => {
         if (categoryFromURL) {
-            console.log(categoryFromURL);
             setActiveButton(categoryFromURL);
         }
     }, [categoryFromURL]);
 
     const filteredImages = activeButton === 'All'
         ? galleryImages
-        : galleryImages ? galleryImages.filter(image => image.category === activeButton) : [];
+        : galleryImages
+            ? galleryImages.filter(image =>
+                activeButton === 'All' || image.category.includes(activeButton)
+            )
+            : [];
 
     function openModal(image) {
         setModalVisibility(true);
