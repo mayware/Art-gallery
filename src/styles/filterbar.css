@@ -3,13 +3,14 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 3.5rem;
+    /* border: 1px solid #fff; */
 }
 
 .filter-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    min-height: 35px;
 }
 
 .filter-btn {
@@ -53,14 +54,23 @@
 
 @media(max-width: 768px) {
     .filter-buttons {
-        height: 25px;
+        flex-direction: column;
     }
 
     .filter-btn {
         height: 35px;
-        width: 100px;
         font-size: 14px;
         font-weight: 600;
-        margin: .1rem;
+        margin: .5rem 0 .5rem 0;
+    }
+
+    #left-filter-btn {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    #right-filter-btn {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
 }

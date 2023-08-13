@@ -26,8 +26,8 @@ const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
                 </div>
                 <div className="modal-body">
                     <div className="modal-body-image">
-                        <img src={selectedImage.image} alt="modal-image" className="modal-image-img" />
-                        <a href={selectedImage.image} target='_blank' className='modal-image-fullsize-link'>
+                        <img src={selectedImage.link} alt="modal-image" className="modal-image-img" />
+                        <a href={selectedImage.imalinkge} target='_blank' className='modal-image-fullsize-link'>
                             <i className="fa-solid fa-expand"></i>
                         </a>
                     </div>

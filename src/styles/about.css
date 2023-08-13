@@ -105,6 +105,12 @@
         height: 600px;
     }
 
+    .author-information-text {
+        font-size: 16px;
+        letter-spacing: .3mm;
+        line-height: 1.5;
+    }
+
     .about-right {
         grid-column: auto;
     }

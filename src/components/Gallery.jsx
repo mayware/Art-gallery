@@ -9,7 +9,7 @@ import galleryBanner from '../assets/gallery-banner.jpg'
 
 const Gallery = () => {
     const [imageNumber, setImageNumber] = useState(12);
-    const { data: galleryImages, totalImages, error, isPending } = useFetch(`https://api.npoint.io/7873dbcb044096724539`, imageNumber);
+    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber);
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
     const [activeButton, setActiveButton] = useState('All');

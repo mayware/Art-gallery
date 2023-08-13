@@ -17,12 +17,13 @@ const useFetch = (url, limit = null) => {
                 return response.json();
             })
             .then(data => {
-                setData(limit ? data.slice(0, limit) : data);
+                // setData(limit ? data.slice(0, limit) : data);
                 setTotalImages(data.length);
                 setGalleryData(limit ? data.images.slice(0, limit) : data)
                 setTotalImages(data.images.length);
                 setIsPending(false);
                 setError(null);
+                console.log(galleryData);
             })
             .catch(error => {
                 setError(error);

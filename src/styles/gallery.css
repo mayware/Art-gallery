@@ -31,6 +31,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 600px;
     animation: fadeIn 5s;
 }
 
@@ -119,6 +120,15 @@
 }
 
 @media(max-width: 768px) {
+
+    .gallery-banner {
+        min-height: 80vh;
+    }
+
+    .gallery-banner-quote {
+        width: 400px;
+    }
+
     .gallery-banner-quote-text {
         font-family: 'Special Elite', cursive !important;
         color: #ced4da;

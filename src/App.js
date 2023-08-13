@@ -8,6 +8,7 @@ import CV from "./components/CV";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
@@ -43,20 +44,22 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <div className="container">
-          <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} />
-          {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="/cv" element={<CV />} />
-          </Routes>
+      <ScrollToTop>
+        <div className="App">
+          <div className="container">
+            <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} />
+            {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
+            <Routes>
+              <Route path="/" element={<Home />} key="home" />
+              <Route path="/gallery" element={<Gallery />} key="gallery" />
+              <Route path="/about" element={<About />} key="about" />
+              <Route path="/contact" element={<Contact />} key="contact" />
+              <Route path="/cv" element={<CV />} key="cv" />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ScrollToTop>
     </BrowserRouter>
   );
 }
