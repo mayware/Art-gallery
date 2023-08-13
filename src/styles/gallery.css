@@ -4,18 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    /* border: 1px solid #fff; */
+    min-width: 100%;
+    background: #000;
 }
 
 .gallery-box {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
     padding-bottom: 1rem;
-    background: #000;
     animation: fadeIn 5s;
-    /* border: 1px solid #fff; */
 }
 
 .gallery-banner {
@@ -119,6 +114,6 @@
         min-height: 800px;
         min-width: 960px;
         max-width: 100%;
-        padding: 0;
+        padding: 1rem;
     }
 }
