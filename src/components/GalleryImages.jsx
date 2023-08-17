@@ -6,7 +6,7 @@ const GalleryImages = ({ galleryImages, openModal }) => {
             {galleryImages.map((image) => (
                 <button className="gallery-image-box" onClick={() => openModal(image)} key={image.id}>
                     <div className="gallery-image-pic">
-                        <img className='gallery-image-img' src={image.link} alt="gallery-image" />
+                        <img className='gallery-image-img' src={image.thumbnail} alt="gallery-image" />
                     </div>
                     <div className="gallery-image-desc">
                         <span className="gallery-image-title">

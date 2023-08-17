@@ -1,15 +1,10 @@
 import '../styles/home.css';
-import { useEffect, useState } from 'react';
 import Homeimages from './Homeimages';
 import useFetch from '../useFetch';
 import banner from '../assets/bg2.png'
 
 const Home = () => {
     const { categoryImages } = useFetch(`https://fakeapi.lyteloli.work/?lang=en`);
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [])
 
     return (
         <div className="content">
