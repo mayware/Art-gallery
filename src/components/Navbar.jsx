@@ -23,7 +23,6 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }
                     <div className="navbar-brand-name">
                         <NavLink to="/" className="nav-brand-link" onClick={scrollToTheTop}>
                             <img src={brandLogo} alt="brand-name-logo" className="brand-name-logo" />
-                            {/* <span className="nav-brand-name-title">DagHol</span> */}
                         </NavLink>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} key="home" />
               <Route path="/gallery" element={<Gallery />} key="gallery" />
-              <Route path="/about" element={<About />} key="about" languageSetup={languageSetup} />
+              <Route path="/about" element={<About languageSetup={languageSetup} />} key="about" />
               <Route path="/contact" element={<Contact />} key="contact" />
               <Route path="/cv" element={<CV />} key="cv" />
             </Routes>
