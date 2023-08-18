@@ -16,6 +16,11 @@ function App() {
   const [languageSetup, setlanguageSetup] = useState("en");
 
   useEffect(() => {
+    const storedLanguage = localStorage.getItem('languageSetup');
+    if (storedLanguage) {
+      setlanguageSetup(storedLanguage);
+    }
+
     const handleResize = () => {
       if (window.innerWidth > 900) {
         setSidebarVisbility(false);
@@ -44,6 +49,7 @@ function App() {
   }
 
   function changeLanguage(lng) {
+    localStorage.setItem('languageSetup', lng);
     setlanguageSetup(lng);
   }
 

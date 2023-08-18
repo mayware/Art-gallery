@@ -27,7 +27,6 @@ const useFetch = (url, limit = null, filtered) => {
                     );
                 }
                 setNavbarBtn(data.nav_menu.buttons);
-                // setAboutData(data);
                 setCategoryImages(data.images);
                 setGalleryData(limit ? categorizedImages.slice(0, limit) : data);
                 setTotalImages(categorizedImages.length);
