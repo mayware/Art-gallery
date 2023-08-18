@@ -1,5 +1,6 @@
 import '../styles/footer.css';
 import Scrollupbutton from './Scrollupbutton';
+import brandLogo from '../assets/dag_logo.png';
 
 const Footer = () => {
     return (
@@ -7,7 +8,7 @@ const Footer = () => {
             <div className="footer-inner">
                 <div className="footer-left">
                     <div className="footer-brand-name">
-                        <span className="footer-brand-name-title">Daghol</span>
+                        <img src={brandLogo} alt="" className="footer-brand-name-logo" />
                     </div>
                 </div>
                 <div className="footer-middle">

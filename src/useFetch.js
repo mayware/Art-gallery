@@ -7,6 +7,7 @@ const useFetch = (url, limit = null, filtered) => {
     const [isPending, setIsPending] = useState(true);
     const [galleryData, setGalleryData] = useState(null);
     const [categoryImages, setCategoryImages] = useState(null);
+    const [aboutData, setAboutData] = useState(null);
 
 
     useEffect(() => {
@@ -26,9 +27,10 @@ const useFetch = (url, limit = null, filtered) => {
                         image.category.includes(filtered)
                     );
                 }
-                setNavbarBtn(data.nav_menu.buttons)
+                setNavbarBtn(data.nav_menu.buttons);
+                setAboutData(data.text);
                 setCategoryImages(data.images);
-                setGalleryData(limit ? categorizedImages.slice(0, limit) : data)
+                setGalleryData(limit ? categorizedImages.slice(0, limit) : data);
                 setTotalImages(categorizedImages.length);
                 setIsPending(false);
                 setError(null);
@@ -40,7 +42,7 @@ const useFetch = (url, limit = null, filtered) => {
         return () => abortCont.abort();
     }, [url, limit, filtered]);
 
-    return { categoryImages, galleryData, navbarBtn, totalImages, isPending, error };
+    return { categoryImages, galleryData, navbarBtn, aboutData, totalImages, isPending, error };
 };
 
 export default useFetch;

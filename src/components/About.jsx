@@ -5,11 +5,7 @@ import { useEffect, useState } from 'react';
 
 const About = ({ languageSetup }) => {
     const [aboutLanguage, setAboutLanguage] = useState('');
-    const { aboutData } = useFetch(`https://fakeapi.lyteloli.work/about?lang=${languageSetup}`);
-
-    useEffect(() => {
-        console.log(languageSetup);
-    }, [languageSetup])
+    const { aboutData } = useFetch(`https://fakeapi.lyteloli.work/about?lang=en`);
 
     return (
         <div className="content">
@@ -19,9 +15,9 @@ const About = ({ languageSetup }) => {
                         <div className="about-information">
                             <span className="author-information-text">
                                 <span className="about-host-name">Dag Hol</span>
-                                (born 26 October 1951, in Hamburg) is a Norwegian figurative painter and graphic artist. He is educated at the Norwegian National Academy of Fine Arts (1980-1984) and has been a student of Gunnar Dietrichson and Odd Nerdrum. Earlier he studied Nordic, French, German and Sanskrit language and literature at the University of Oslo.
+                                {aboutData}
                                 <br></br>
-                                {aboutData && <span>{aboutData.text}</span>}
+                                {/* {aboutData && <span>{aboutData.text}</span>} */}
                             </span>
                         </div>
                     </div>

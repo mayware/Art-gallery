@@ -27,6 +27,12 @@
     text-decoration: none;
 }
 
+.brand-name-logo {
+    height: 70px;
+    width: 200px;
+    object-fit: fill;
+}
+
 .nav-brand-name-title {
     font-size: 45px;
     font-weight: 700;
