@@ -3,10 +3,9 @@ import authorImage from '../assets/author-image.jpg';
 import { useEffect, useState } from 'react';
 
 const About = ({ languageSetup }) => {
-    const [aboutLanguage, setAboutLanguage] = useState('');
     const [aboutData, setAboutData] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(`https://fakeapi.lyteloli.work/about?lang=${languageSetup}`)
@@ -41,7 +40,8 @@ const About = ({ languageSetup }) => {
                     </div>
                     <div className="about-right">
                         <div className="about-author-illustration">
-                            <img className="about-author-img" src={authorImage} alt="author-image" />
+                            {aboutData && <img className="about-author-img" src={aboutData.banner_image} alt="author-image" />}
+
                         </div>
                     </div>
                 </div>

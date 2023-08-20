@@ -57,8 +57,19 @@
     width: 100%;
 }
 
-/* @media(min-width: 960px) {
-    .sidebar {
-        display: none;
-    }
-} */
+.sidebar-language-select {
+    height: 25px;
+    width: 50px;
+    padding: .1rem;
+    border: 1px solid #4a4e69;
+    border-radius: 5px;
+    background: #101010;
+    color: #e0e1dd;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+.sidebar-language-select:focus {
+    border-color: #f4a261;
+    transition: 200ms ease-in-out;
+}

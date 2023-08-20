@@ -47,15 +47,15 @@ const Sidebar = ({ toggleSidebar, languageSetup, changeLanguage }) => {
                         </Link>
                     </div>
                 </div>
-                {/* <div className="navbar-language-box">
-                    <select className="language-select" value={languageSetup}
+                <div className="sidebar-language-box">
+                    <select className="sidebar-language-select" value={languageSetup}
                         onChange={(e) => changeLanguage(e.target.value)}>
                         <option value="en">EN</option>
                         <option value="no">NO</option>
                         <option value="zh">ZH</option>
                         <option value="hi">HI</option>
                     </select>
-                </div> */}
+                </div>
             </div>
         </aside>
     );

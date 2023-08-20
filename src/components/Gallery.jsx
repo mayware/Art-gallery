@@ -7,9 +7,12 @@ import Filterbar from './Filterbar';
 import Modal from './Modal';
 import galleryBanner from '../assets/gallery-banner.jpg'
 
-const Gallery = () => {
+const Gallery = ({ languageSetup }) => {
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [galleryAttribute, setGalleryAttribute] = useState(null);
+    const [isLoading, setIsloading] = useState(true);
+    const [errors, setErrors] = useState(null);
     const [activeButton, setActiveButton] = useState('All');
     const [imageNumber, setImageNumber] = useState(12);
     const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber, activeButton);
@@ -17,6 +20,24 @@ const Gallery = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const categoryFromURL = searchParams.get("category");
+
+    useEffect(() => {
+        fetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setGalleryAttribute(data);
+                setIsloading(false);
+            })
+            .catch(error => {
+                setErrors(error);
+                setIsloading(false);
+            });
+    }, [languageSetup]);
 
     useEffect(() => {
         if (categoryFromURL) {
@@ -60,16 +81,18 @@ const Gallery = () => {
                 <div className="gallery-box">
                     <div className="gallery-banner">
                         <img src={galleryBanner} alt="" className="gallery-banner-img" />
-                        <div className="gallery-banner-quote">
-                            <span className="gallery-banner-quote-text">
-                                "Whoever marries the spirit of this age will find himself a widower in the next."
-                            </span>
-                            <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
-                        </div>
+                        {galleryAttribute && (
+                            <div className="gallery-banner-quote">
+                                <span className="gallery-banner-quote-text">
+                                    {galleryAttribute.gallery_quote}
+                                </span>
+                                <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
+                            </div>
+                        )}
                     </div>
                     <div className="gallery-set">
                         <div className="filter-tab">
-                            <Filterbar activeButton={activeButton} changeFilter={changeFilter} />
+                            {galleryAttribute && <Filterbar galleryAttribute={galleryAttribute} activeButton={activeButton} changeFilter={changeFilter} />}
                         </div>
                         {filteredImages && <GalleryImages galleryImages={filteredImages} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}

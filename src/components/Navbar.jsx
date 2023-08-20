@@ -57,7 +57,7 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }
                         ))}
                     </div>
                     <div className="navbar-language-box">
-                        <select className="language-select" value={languageSetup}
+                        <select className="navbar-language-select" value={languageSetup}
                             onChange={(e) => changeLanguage(e.target.value)}>
                             <option value="en">EN</option>
                             <option value="no">NO</option>

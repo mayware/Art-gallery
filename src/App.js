@@ -62,10 +62,10 @@ function App() {
             {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} languageSetup={languageSetup} changeLanguage={changeLanguage} />}
             <Routes>
               <Route path="/" element={<Home />} key="home" />
-              <Route path="/gallery" element={<Gallery />} key="gallery" />
+              <Route path="/gallery" element={<Gallery languageSetup={languageSetup} />} key="gallery" />
               <Route path="/about" element={<About languageSetup={languageSetup} />} key="about" />
-              <Route path="/contact" element={<Contact />} key="contact" />
-              <Route path="/cv" element={<CV />} key="cv" />
+              <Route path="/cv" element={<CV languageSetup={languageSetup} />} key="cv" />
+              <Route path="/contact" element={<Contact languageSetup={languageSetup} />} key="contact" />
             </Routes>
           </div>
           <Footer />

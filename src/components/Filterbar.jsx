@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/filterbar.css';
 
-const Filterbar = ({ activeButton, changeFilter }) => {
+const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
 
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
@@ -10,32 +10,15 @@ const Filterbar = ({ activeButton, changeFilter }) => {
     return (
         <div className='filter-bar'>
             <div className="filter-buttons">
-                <button
-                    className={`filter-btn ${activeButton === 'All' ? 'active' : ''}`}
-                    onClick={() => handleButtonClick('All')}
-                    id="left-filter-btn"
-                >
-                    All
-                </button>
-                <button
-                    className={`filter-btn ${activeButton === 'Oil Paintings' ? 'active' : ''}`}
-                    onClick={() => handleButtonClick('Oil Paintings')}
-                >
-                    Oil Paintings
-                </button>
-                <button
-                    className={`filter-btn ${activeButton === 'Lithographs' ? 'active' : ''}`}
-                    onClick={() => handleButtonClick('Lithographs')}
-                >
-                    Lithographs
-                </button>
-                <button
-                    className={`filter-btn ${activeButton === 'NFTS' ? 'active' : ''}`}
-                    onClick={() => handleButtonClick('NFTS')}
-                    id="right-filter-btn"
-                >
-                    NFTS
-                </button>
+                {galleryAttribute.categories.map((filterBtn) => (
+                    <button
+                        className={`filter-btn ${activeButton === filterBtn ? 'active' : ''}`}
+                        onClick={() => handleButtonClick(filterBtn)}
+                        id="left-filter-btn"
+                    >
+                        {filterBtn}
+                    </button>
+                ))}
             </div>
         </div>
     );
