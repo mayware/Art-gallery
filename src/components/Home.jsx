@@ -1,10 +1,9 @@
 import '../styles/home.css';
 import Homeimages from './Homeimages';
-import banner from '../assets/bg2.png'
 import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const [categoryImages, setCategoryImages] = useState(null);
+    const [homeImages, sethomeImages] = useState(null);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
 
@@ -17,7 +16,7 @@ const Home = () => {
                 return response.json();
             })
             .then(data => {
-                setCategoryImages(data.images);
+                sethomeImages(data);
                 setIsPending(false);
             })
             .catch(error => {
@@ -31,12 +30,12 @@ const Home = () => {
             <div className="home-content">
                 <div className="home-banner">
                     <div className="home-banner-image">
-                        <img src={banner} alt="" className="home-banner-img" />
+                        {homeImages && <img src={homeImages.banner_image} alt="" className="home-banner-img" />}
                     </div>
                 </div>
                 <div className="home-category-area">
                     <div className="home-art-categories">
-                        {categoryImages && <Homeimages categoryImages={categoryImages} />}
+                        {homeImages && <Homeimages homeImages={homeImages} />}
                     </div>
                 </div>
             </div>

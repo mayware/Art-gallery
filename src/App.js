@@ -36,6 +36,7 @@ function App() {
     };
   }, []);
 
+
   function toggleSidebar() {
     if (sidebarVisibility) {
       document.body.style.overflow = "auto";

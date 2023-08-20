@@ -19,11 +19,9 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }
             })
             .then(data => {
                 setNavbarBtn(data.nav_menu.buttons);
-                setIsPending(false);
             })
             .catch(error => {
-                setError(error);
-                setIsPending(false);
+                console.error('Error fetching navigation buttons:', error);
             });
     }, [languageSetup]);
 

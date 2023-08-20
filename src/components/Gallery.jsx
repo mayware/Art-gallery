@@ -13,13 +13,19 @@ const Gallery = ({ languageSetup }) => {
     const [galleryAttribute, setGalleryAttribute] = useState(null);
     const [isLoading, setIsloading] = useState(true);
     const [errors, setErrors] = useState(null);
-    const [activeButton, setActiveButton] = useState('All');
+
+    const initialActiveButton = localStorage.getItem('activeButton') || 'All';
+    const [activeButton, setActiveButton] = useState(initialActiveButton);
+
     const [imageNumber, setImageNumber] = useState(12);
     const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber, activeButton);
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const categoryFromURL = searchParams.get("category");
+
+
+
 
     useEffect(() => {
         fetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`)

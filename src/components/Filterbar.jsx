@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import '../styles/filterbar.css';
 
 const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
@@ -6,6 +6,9 @@ const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
     };
+    useEffect(() => {
+        localStorage.setItem('activeButton', activeButton);
+    }, [activeButton]);
 
     return (
         <div className='filter-bar'>

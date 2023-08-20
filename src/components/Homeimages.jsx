@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Homeimages = ({ categoryImages }) => {
+const Homeimages = ({ homeImages }) => {
     return (
         <>
-            {categoryImages.map((image) => (
+            {homeImages.images.map((image) => (
                 <Link
                     to={{
                         pathname: '/gallery',

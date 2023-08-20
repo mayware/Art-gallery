@@ -1,10 +1,32 @@
 import '../styles/contact.css';
-import { useState } from 'react';
-const Contact = () => {
+import { useState, useEffect } from 'react';
+const Contact = ({ languageSetup }) => {
 
     const [nameField, setNameField] = useState('');
     const [emailField, setEmailField] = useState('');
     const [textFieldField, setTextField] = useState('');
+
+    const [contactData, setContactData] = useState(null);
+    const [error, setError] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+
+    useEffect(() => {
+        fetch(`https://fakeapi.lyteloli.work/form?lang=${languageSetup}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setContactData(data);
+                setIsPending(false);
+            })
+            .catch(error => {
+                setError(error);
+                setIsPending(false);
+            });
+    }, [languageSetup]);
 
     function nameFieldChange(event) {
         setNameField(event.target.value);
@@ -58,7 +80,7 @@ const Contact = () => {
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
-                                    <span className="contact-detail-key-text">Address</span>
+                                    {contactData && <span className="contact-detail-key-text">{contactData.address}</span>}
                                 </div>
                                 <div className="contact-detail-value">
                                     <span className="contact-detail-value-text">Nils Lauritssøns vei 26, 0854 Oslo</span>
@@ -71,7 +93,7 @@ const Contact = () => {
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
-                                    <span className="contact-detail-key-text">Phone</span>
+                                    {contactData && <span className="contact-detail-key-text">{contactData.phone}</span>}
                                 </div>
                                 <div className="contact-detail-value">
                                     <span className="contact-detail-value-text">+47 99 29 99 92</span>
@@ -84,7 +106,7 @@ const Contact = () => {
                             </span>
                             <div className="contact-detail-key-value">
                                 <div className="contact-detail-key">
-                                    <span className="contact-detail-key-text">Email</span>
+                                    {contactData && <span className="contact-detail-key-text">{contactData.email}</span>}
                                 </div>
                                 <div className="contact-detail-value">
                                     <span className="contact-detail-value-text">dag@daghol.no</span>
@@ -95,17 +117,14 @@ const Contact = () => {
                 </div>
                 <div className="contact-right">
                     <div className="contact-form-box">
-                        <div className="contact-form-title">
-                            <div className="contact-form-title-text">Contact Me</div>
-                        </div>
                         <form onSubmit={handleSubmit} className="contact-form">
-                            <label htmlFor="name-field" className="contact-field-label">Name</label>
-                            <input type="text" name="name-field" value={nameField} onChange={nameFieldChange} className="contact-input-field" placeholder="Enter your full Name" required minLength='3' />
-                            <label htmlFor="email-field" className="contact-field-label">Email</label>
-                            <input type="email" name="email-field" value={emailField} onChange={emailFieldChange} className="contact-input-field" placeholder="Enter your Email" required />
-                            <label htmlFor="textarea-field" className="contact-field-label">Comment or Message</label>
-                            <textarea value={textFieldField} onChange={textFieldChange} cols="30" rows="10" name="textarea-field" className="contact-textarea-field" placeholder="Write something.." required></textarea>
-                            <input type="submit" className="contact-submit-btn" value="SEND MESSAGE" />
+                            {contactData && <label htmlFor="name-field" className="contact-field-label">{contactData.name}</label>}
+                            <input type="text" name="name-field" value={nameField} onChange={nameFieldChange} className="contact-input-field" required minLength='3' />
+                            {contactData && <label htmlFor="email-field" className="contact-field-label">{contactData.email}</label>}
+                            <input type="email" name="email-field" value={emailField} onChange={emailFieldChange} className="contact-input-field" required />
+                            {contactData && <label htmlFor="textarea-field" className="contact-field-label">{contactData.body}</label>}
+                            <textarea value={textFieldField} onChange={textFieldChange} cols="30" rows="10" name="textarea-field" className="contact-textarea-field" required></textarea>
+                            {contactData && <input type="submit" className="contact-submit-btn" value={contactData.send_button} />}
                         </form>
                     </div>
                 </div>
