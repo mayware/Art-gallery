@@ -1,10 +1,30 @@
 import '../styles/home.css';
 import Homeimages from './Homeimages';
-import useFetch from '../useFetch';
 import banner from '../assets/bg2.png'
+import { useState, useEffect } from 'react';
 
 const Home = () => {
-    const { categoryImages } = useFetch(`https://fakeapi.lyteloli.work/?lang=en`);
+    const [categoryImages, setCategoryImages] = useState(null);
+    const [error, setError] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+
+    useEffect(() => {
+        fetch(`https://fakeapi.lyteloli.work/?lang=en`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setCategoryImages(data.images);
+                setIsPending(false);
+            })
+            .catch(error => {
+                setError(error);
+                setIsPending(false);
+            });
+    }, []);
 
     return (
         <div className="content">

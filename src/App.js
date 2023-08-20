@@ -59,7 +59,7 @@ function App() {
         <div className="App">
           <div className="container">
             <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} languageSetup={languageSetup} changeLanguage={changeLanguage} />
-            {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} />}
+            {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} languageSetup={languageSetup} changeLanguage={changeLanguage} />}
             <Routes>
               <Route path="/" element={<Home />} key="home" />
               <Route path="/gallery" element={<Gallery />} key="gallery" />

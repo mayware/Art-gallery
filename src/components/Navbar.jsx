@@ -1,11 +1,31 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import useFetch from '../useFetch';
 import brandLogo from '../assets/dag_logo.png';
+import { useEffect, useState } from 'react';
 
 const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }) => {
     const location = useLocation();
-    const { navbarBtn } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`);
+    const [error, setError] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [navbarBtn, setNavbarBtn] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                setNavbarBtn(data.nav_menu.buttons);
+                setIsPending(false);
+            })
+            .catch(error => {
+                setError(error);
+                setIsPending(false);
+            });
+    }, [languageSetup]);
 
     const isActive = (path) => {
         return location.pathname === path ? "active-link" : "";

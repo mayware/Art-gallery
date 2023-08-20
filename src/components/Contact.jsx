@@ -1,5 +1,5 @@
 import '../styles/contact.css';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 const Contact = () => {
 
     const [nameField, setNameField] = useState('');

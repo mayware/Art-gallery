@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 
 const useFetch = (url, limit = null, filtered) => {
-    const [navbarBtn, setNavbarBtn] = useState(null);
     const [totalImages, setTotalImages] = useState(0);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [galleryData, setGalleryData] = useState(null);
-    const [categoryImages, setCategoryImages] = useState(null);
 
 
     useEffect(() => {
@@ -26,8 +24,6 @@ const useFetch = (url, limit = null, filtered) => {
                         image.category.includes(filtered)
                     );
                 }
-                setNavbarBtn(data.nav_menu.buttons);
-                setCategoryImages(data.images);
                 setGalleryData(limit ? categorizedImages.slice(0, limit) : data);
                 setTotalImages(categorizedImages.length);
                 setIsPending(false);
@@ -40,7 +36,7 @@ const useFetch = (url, limit = null, filtered) => {
         return () => abortCont.abort();
     }, [url, limit, filtered]);
 
-    return { categoryImages, galleryData, navbarBtn, totalImages, isPending, error };
+    return { galleryData, totalImages, isPending, error };
 };
 
 export default useFetch;
