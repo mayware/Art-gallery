@@ -18,14 +18,11 @@ const Gallery = ({ languageSetup }) => {
     const [activeButton, setActiveButton] = useState(initialActiveButton);
 
     const [imageNumber, setImageNumber] = useState(12);
-    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=en`, imageNumber, activeButton);
+    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`, imageNumber, activeButton);
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const categoryFromURL = searchParams.get("category");
-
-
-
 
     useEffect(() => {
         fetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`)
@@ -44,6 +41,7 @@ const Gallery = ({ languageSetup }) => {
                 setIsloading(false);
             });
     }, [languageSetup]);
+
 
     useEffect(() => {
         if (categoryFromURL) {
@@ -79,6 +77,7 @@ const Gallery = ({ languageSetup }) => {
 
     function changeFilter(filterBtn) {
         setActiveButton(filterBtn);
+        console.log(filterBtn);
     }
 
     return (
