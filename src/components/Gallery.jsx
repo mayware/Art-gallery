@@ -16,6 +16,9 @@ const Gallery = ({ languageSetup }) => {
 
     const initialActiveButton = localStorage.getItem('activeButton') || 'All';
     const [activeButton, setActiveButton] = useState(initialActiveButton);
+    useEffect(() => {
+        console.log("initial state: " + initialActiveButton);
+    }, [initialActiveButton])
 
     const [imageNumber, setImageNumber] = useState(12);
     const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`, imageNumber, activeButton);
@@ -77,7 +80,6 @@ const Gallery = ({ languageSetup }) => {
 
     function changeFilter(filterBtn) {
         setActiveButton(filterBtn);
-        console.log(filterBtn);
     }
 
     return (

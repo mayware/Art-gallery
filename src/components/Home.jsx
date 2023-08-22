@@ -8,6 +8,7 @@ const Home = () => {
     const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
+        localStorage.removeItem('activeButton');
         fetch(`https://fakeapi.lyteloli.work/?lang=en`)
             .then(response => {
                 if (!response.ok) {
