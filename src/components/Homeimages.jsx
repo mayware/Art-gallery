@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Homeimages = ({ homeImages }) => {
+
     return (
         <>
             {homeImages.images.map((image) => (

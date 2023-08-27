@@ -2,14 +2,14 @@ import '../styles/home.css';
 import Homeimages from './Homeimages';
 import { useState, useEffect } from 'react';
 
-const Home = () => {
+const Home = ({ languageSetup }) => {
     const [homeImages, sethomeImages] = useState(null);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
 
     useEffect(() => {
         localStorage.removeItem('activeButton');
-        fetch(`https://fakeapi.lyteloli.work/?lang=en`)
+        fetch(`https://fakeapi.lyteloli.work/?lang=${languageSetup}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -24,7 +24,7 @@ const Home = () => {
                 setError(error);
                 setIsPending(false);
             });
-    }, []);
+    }, [languageSetup]);
 
     return (
         <div className="content">

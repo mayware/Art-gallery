@@ -60,7 +60,7 @@ function App() {
           <Navbar toggleSidebar={toggleSidebar} sidebarBtnIcon={sidebarBtnIcon} languageSetup={languageSetup} changeLanguage={changeLanguage} />
           {sidebarVisibility && <Sidebar toggleSidebar={toggleSidebar} languageSetup={languageSetup} changeLanguage={changeLanguage} />}
           <Routes>
-            <Route path="/" element={<Home />} key="home" />
+            <Route path="/" element={<Home languageSetup={languageSetup} />} key="home" />
             <Route path="/gallery" element={<Gallery languageSetup={languageSetup} />} key="gallery" />
             <Route path="/gallery/:category" element={<Gallery languageSetup={languageSetup} />} key="gallery-with-filter" />
             <Route path="/about" element={<About languageSetup={languageSetup} />} key="about" />
