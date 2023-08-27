@@ -1,8 +1,8 @@
 import '../styles/modal.css';
 
 const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
-    const currentIndex = galleryImages.findIndex((image) => image.id === selectedImage.id);
 
+    const currentIndex = galleryImages.findIndex((image) => image.id === selectedImage.id);
     const handleNext = () => {
         const nextIndex = (currentIndex + 1) % galleryImages.length;
         openModal(galleryImages[nextIndex]);
