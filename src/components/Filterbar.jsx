@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import '../styles/filterbar.css';
@@ -6,12 +6,13 @@ import '../styles/filterbar.css';
 const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
     const navigate = useNavigate();
 
+    const [defaultActiveButton, setDefaultActiveButton] = useState(galleryAttribute.categories[0]);
+
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
         const newPath = `/gallery/${buttonName}`;
         navigate(newPath);
     };
-
 
     useEffect(() => {
         localStorage.setItem('activeButton', activeButton);
@@ -22,9 +23,11 @@ const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
             <div className="filter-buttons">
                 {galleryAttribute.categories.map((filterBtn) => (
                     <button
-                        className={`filter-btn ${activeButton === filterBtn ? 'active' : ''}`}
-                        onClick={() => handleButtonClick(filterBtn)}
-                        id="left-filter-btn"
+                        className={`filter-btn ${defaultActiveButton === filterBtn ? 'active' : ''}`}
+                        onClick={() => {
+                            handleButtonClick(filterBtn);
+                            setDefaultActiveButton(filterBtn);
+                        }}
                         key={filterBtn}
                     >
                         {filterBtn}

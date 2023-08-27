@@ -1,7 +1,6 @@
 import '../styles/gallery.css';
 import { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-import useFetch from '../useFetch';
+import { useLocation, useParams } from "react-router-dom";
 import GalleryImages from './GalleryImages';
 import Filterbar from './Filterbar';
 import Modal from './Modal';
@@ -10,15 +9,16 @@ import galleryBanner from '../assets/gallery-banner.jpg'
 const Gallery = ({ languageSetup }) => {
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
+    const { category } = useParams();
+
     const [galleryAttribute, setGalleryAttribute] = useState(null);
-    const [isLoading, setIsloading] = useState(true);
-    const [errors, setErrors] = useState(null);
-
-    const initialActiveButton = localStorage.getItem('activeButton') || 'All';
-    const [activeButton, setActiveButton] = useState(initialActiveButton);
-
+    const [galleryImages, setGalleryImages] = useState(null);
     const [imageNumber, setImageNumber] = useState(12);
-    const { galleryData: galleryImages, totalImages, error, isPending } = useFetch(`https://fakeapi.lyteloli.work/gallery?lang=${languageSetup}`, imageNumber, activeButton);
+    const [totalImages, setTotalImages] = useState(0);
+
+    const [error, setError] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [activeButton, setActiveButton] = useState(null);
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -33,29 +33,27 @@ const Gallery = ({ languageSetup }) => {
                 return response.json();
             })
             .then(data => {
+                let filteredImages = data.images;
+                if (data.categories.slice(1).includes(activeButton)) {
+                    filteredImages = data.images.filter(image => image.category.includes(activeButton))
+                }
+                setGalleryImages(imageNumber ? filteredImages.slice(0, imageNumber) : data);
+                setTotalImages(filteredImages.length);
                 setGalleryAttribute(data);
-                setIsloading(false);
+                setIsPending(false);
+                setError(null);
             })
             .catch(error => {
-                setErrors(error);
-                setIsloading(false);
+                setError(error);
+                setIsPending(false);
             });
-    }, [languageSetup]);
-
+    }, [languageSetup, imageNumber, activeButton]);
 
     useEffect(() => {
         if (categoryFromURL) {
             setActiveButton(categoryFromURL);
         }
     }, [categoryFromURL]);
-
-    const filteredImages = activeButton === 'All'
-        ? galleryImages
-        : galleryImages
-            ? galleryImages.filter(image =>
-                activeButton === 'All' || image.category.includes(activeButton)
-            )
-            : [];
 
     function changeFilter(filterBtn) {
         setActiveButton(filterBtn);
@@ -80,7 +78,6 @@ const Gallery = ({ languageSetup }) => {
     }
 
 
-
     return (
         <div className="content">
             <div className="gallery-content">
@@ -100,7 +97,7 @@ const Gallery = ({ languageSetup }) => {
                         <div className="filter-tab">
                             {galleryAttribute && <Filterbar galleryAttribute={galleryAttribute} activeButton={activeButton} changeFilter={changeFilter} />}
                         </div>
-                        {filteredImages && <GalleryImages galleryImages={filteredImages} openModal={openModal} />}
+                        {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}
                             selectedImage={selectedImage}
                             galleryImages={galleryImages}

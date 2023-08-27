@@ -54,14 +54,4 @@
         font-weight: 600;
         margin: .5rem 0 .5rem 0;
     }
-
-    #left-filter-btn {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-
-    #right-filter-btn {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-    }
 }
