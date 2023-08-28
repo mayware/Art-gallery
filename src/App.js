@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
   const [sidebarBtnIcon, setSidebarBtnIcon] = useState(false);
+  // const [categoryNumber, setCategoryNumber] = useState(0);
 
   const [languageSetup, setlanguageSetup] = useState(
     localStorage.getItem('languageSetup') || 'en'

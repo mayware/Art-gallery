@@ -94,7 +94,7 @@ const Gallery = ({ languageSetup }) => {
                     </div>
                     <div className="gallery-set">
                         <div className="filter-tab">
-                            {galleryAttribute && <Filterbar galleryAttribute={galleryAttribute} activeButton={activeButton} changeFilter={changeFilter} />}
+                            {galleryAttribute && <Filterbar categoryFromURL={categoryFromURL} galleryAttribute={galleryAttribute} activeButton={activeButton} changeFilter={changeFilter} />}
                         </div>
                         {galleryImages && <GalleryImages galleryImages={galleryImages} openModal={openModal} />}
                         {modalVisibility && <Modal closeModal={closeModal}

@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import '../styles/filterbar.css';
 
-const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
+const Filterbar = ({ activeButton, changeFilter, galleryAttribute, categoryFromURL }) => {
     const navigate = useNavigate();
-    const [defaultActiveButton, setDefaultActiveButton] = useState(galleryAttribute.categories[0]);
+    // const [defaultActiveButton, setDefaultActiveButton] = useState(galleryAttribute.categories[0]);
+    const [defaultActiveButton, setDefaultActiveButton] = useState(categoryFromURL);
 
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
