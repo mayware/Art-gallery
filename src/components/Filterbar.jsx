@@ -5,8 +5,7 @@ import '../styles/filterbar.css';
 
 const Filterbar = ({ activeButton, changeFilter, galleryAttribute, categoryFromURL }) => {
     const navigate = useNavigate();
-    // const [defaultActiveButton, setDefaultActiveButton] = useState(galleryAttribute.categories[0]);
-    const [defaultActiveButton, setDefaultActiveButton] = useState(categoryFromURL);
+    const [defaultActiveButton, setDefaultActiveButton] = useState(categoryFromURL || galleryAttribute.categories[0]);
 
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
