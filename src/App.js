@@ -12,7 +12,10 @@ import Footer from "./components/Footer";
 function App() {
   const [sidebarVisibility, setSidebarVisbility] = useState(false);
   const [sidebarBtnIcon, setSidebarBtnIcon] = useState(false);
-  const [languageSetup, setlanguageSetup] = useState("en");
+
+  const [languageSetup, setlanguageSetup] = useState(
+    localStorage.getItem('languageSetup') || 'en'
+  );
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('languageSetup');
@@ -62,7 +65,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home languageSetup={languageSetup} />} key="home" />
             <Route path="/gallery" element={<Gallery languageSetup={languageSetup} />} key="gallery" />
-            <Route path="/gallery/:category" element={<Gallery languageSetup={languageSetup} />} key="gallery-with-filter" />
             <Route path="/about" element={<About languageSetup={languageSetup} />} key="about" />
             <Route path="/cv" element={<CV languageSetup={languageSetup} />} key="cv" />
             <Route path="/contact" element={<Contact languageSetup={languageSetup} />} key="contact" />

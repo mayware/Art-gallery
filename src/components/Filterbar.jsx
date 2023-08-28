@@ -5,12 +5,11 @@ import '../styles/filterbar.css';
 
 const Filterbar = ({ activeButton, changeFilter, galleryAttribute }) => {
     const navigate = useNavigate();
-
     const [defaultActiveButton, setDefaultActiveButton] = useState(galleryAttribute.categories[0]);
 
     const handleButtonClick = (buttonName) => {
         changeFilter(buttonName);
-        const newPath = `/gallery/${buttonName}`;
+        const newPath = `/gallery?category=${buttonName}`;
         navigate(newPath);
     };
 

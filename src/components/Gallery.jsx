@@ -9,7 +9,6 @@ import galleryBanner from '../assets/gallery-banner.jpg'
 const Gallery = ({ languageSetup }) => {
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-    const { category } = useParams();
 
     const [galleryAttribute, setGalleryAttribute] = useState(null);
     const [galleryImages, setGalleryImages] = useState(null);
