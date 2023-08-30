@@ -1,5 +1,4 @@
 import '../styles/about.css';
-import authorImage from '../assets/author-image.jpg';
 import { useEffect, useState } from 'react';
 
 const About = ({ languageSetup }) => {

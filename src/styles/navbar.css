@@ -38,6 +38,7 @@
     font-weight: 700;
     color: #e0e1dd;
     font-family: 'Passion One', cursive !important;
+    text-shadow: 0px 0px 15px rgba(235, 94, 40, 1);
 }
 
 .navbar-right {

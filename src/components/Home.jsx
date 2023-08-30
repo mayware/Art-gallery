@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Home = ({ languageSetup }) => {
     const [homeImages, sethomeImages] = useState(null);
+    const [welcomeText, setWelcomeText] = useState(null);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
 
@@ -18,6 +19,8 @@ const Home = ({ languageSetup }) => {
             })
             .then(data => {
                 sethomeImages(data);
+                setWelcomeText(data.text_homepage);
+                console.log(data.text_homepage);
                 setIsPending(false);
             })
             .catch(error => {
@@ -37,6 +40,9 @@ const Home = ({ languageSetup }) => {
                 <div className="home-category-area">
                     <div className="home-art-categories">
                         {homeImages && <Homeimages homeImages={homeImages} />}
+                    </div>
+                    <div className="home-welcome-info">
+                        {welcomeText && <span className='home-welcome-info-text'>{welcomeText}</span>}
                     </div>
                 </div>
             </div>

@@ -15,7 +15,6 @@
 
 .home-banner-image {
     height: 750px;
-    /* width: 100vw; */
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -52,10 +51,10 @@
 }
 
 .home-category-area {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
     position: relative;
     -webkit-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
     -moz-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
@@ -63,20 +62,24 @@
 }
 
 .home-art-categories {
+    grid-column: 1/2;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    grid-template-columns: 1fr;
     position: relative;
     min-height: 600px;
     width: 100%;
     padding: 4rem;
 }
 
+.home-welcome-info-text {
+    color: #fff;
+}
+
 .category-illustration {
     position: relative;
-    height: 450px;
-    width: 350px;
+    height: 350px;
+    width: 300px;
     margin: .7rem;
     overflow: hidden;
     border-radius: 5px;
@@ -130,13 +133,17 @@
     display: block;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
     transition: transform 0.3s;
     border-radius: 5px;
 }
 
 .category-illustration:hover .category-img {
     transform: scale(1.2);
+}
+
+.home-welcome-info {
+    grid-column: 2/5;
 }
 
 

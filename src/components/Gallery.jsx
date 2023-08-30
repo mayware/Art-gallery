@@ -82,15 +82,17 @@ const Gallery = ({ languageSetup }) => {
             <div className="gallery-content">
                 <div className="gallery-box">
                     <div className="gallery-banner">
-                        <img src={galleryBanner} alt="" className="gallery-banner-img" />
-                        {galleryAttribute && (
-                            <div className="gallery-banner-quote">
-                                <span className="gallery-banner-quote-text">
-                                    {galleryAttribute.gallery_quote}
-                                </span>
-                                <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
-                            </div>
-                        )}
+                        <div className="gallery-quote-overlay">
+                            {galleryAttribute && <img src={galleryAttribute.banner_image} alt="gallery-banner" className="gallery-banner-img" />}
+                            {galleryAttribute && (
+                                <div className="gallery-banner-quote">
+                                    <span className="gallery-banner-quote-text">
+                                        {galleryAttribute.gallery_quote}
+                                    </span>
+                                    <span className="gallery-banner-quote-author">- Soeren Kierkegaard</span>
+                                </div>
+                            )}
+                        </div>
                     </div>
                     <div className="gallery-set">
                         <div className="filter-tab">

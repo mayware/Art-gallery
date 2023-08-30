@@ -1,6 +1,5 @@
 import '../styles/navbar.css';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import brandLogo from '../assets/dag_logo.png';
 import { useEffect, useState } from 'react';
 
 const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }) => {
@@ -40,7 +39,7 @@ const Navbar = ({ toggleSidebar, sidebarBtnIcon, languageSetup, changeLanguage }
                 <div className="navbar-brand">
                     <div className="navbar-brand-name">
                         <NavLink to="/" className="nav-brand-link" onClick={scrollToTheTop}>
-                            <img src={brandLogo} alt="brand-name-logo" className="brand-name-logo" />
+                            <span className="nav-brand-name-title">DagHol</span>
                         </NavLink>
                     </div>
                 </div>
