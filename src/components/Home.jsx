@@ -1,6 +1,7 @@
 import '../styles/home.css';
 import Homeimages from './Homeimages';
 import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const Home = ({ languageSetup }) => {
     const [homeImages, sethomeImages] = useState(null);
@@ -19,8 +20,7 @@ const Home = ({ languageSetup }) => {
             })
             .then(data => {
                 sethomeImages(data);
-                setWelcomeText(data.text_homepage);
-                console.log(data.text_homepage);
+                setWelcomeText(data.text_homepage.replace('website.', 'website.<br/>'));
                 setIsPending(false);
             })
             .catch(error => {
@@ -29,12 +29,19 @@ const Home = ({ languageSetup }) => {
             });
     }, [languageSetup]);
 
+    const [ref, inView] = useInView({
+        rootMargin: '0px 0px -30% 0px',
+        triggerOnce: true,
+    });
+
     return (
         <div className="content">
             <div className="home-content">
                 <div className="home-banner">
                     <div className="home-banner-image">
-                        {homeImages && <img src={homeImages.banner_image} alt="" className="home-banner-img" />}
+                        {homeImages && (
+                            <img src={homeImages.banner_image} alt="" className="home-banner-img" />
+                        )}
                     </div>
                 </div>
                 <div className="home-category-area">
@@ -42,12 +49,18 @@ const Home = ({ languageSetup }) => {
                         {homeImages && <Homeimages homeImages={homeImages} />}
                     </div>
                     <div className="home-welcome-info">
-                        {welcomeText && <span className='home-welcome-info-text'>{welcomeText}</span>}
+                        {welcomeText && (
+                            <span
+                                ref={ref}
+                                className={`home-welcome-info-text ${inView ? 'reveal' : ''}`}
+                                dangerouslySetInnerHTML={{ __html: welcomeText }}
+                            />
+                        )}
                     </div>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Home;

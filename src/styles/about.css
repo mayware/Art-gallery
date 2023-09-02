@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@500&display=swap');
 
 .about-content {
     width: 100vw;
@@ -60,7 +60,7 @@
     font-weight: 500;
     line-height: 1.9;
     text-align: justify;
-    font-family: 'Edu SA Beginner', cursive !important;
+    font-family: 'Taviraj', serif;
 }
 
 .about-host-name {
