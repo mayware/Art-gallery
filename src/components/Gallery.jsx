@@ -4,7 +4,6 @@ import { useLocation, useParams } from "react-router-dom";
 import GalleryImages from './GalleryImages';
 import Filterbar from './Filterbar';
 import Modal from './Modal';
-import galleryBanner from '../assets/gallery-banner.jpg'
 
 const Gallery = ({ languageSetup }) => {
     const [modalVisibility, setModalVisibility] = useState(false);

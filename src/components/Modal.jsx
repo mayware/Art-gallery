@@ -38,7 +38,6 @@ const Modal = ({ closeModal, selectedImage, galleryImages, openModal }) => {
                         <span className="modal-image-desc">
                             <div className="modal-image-desc-title">
                                 {selectedImage.title}
-                                {selectedImage.category}
                             </div>
                             <div className="modal-image-desc-size">
                                 {selectedImage.image_size}

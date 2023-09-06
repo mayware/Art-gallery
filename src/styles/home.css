@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lora:wght@500&display=swap');
 
 .home-content {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    width: 100%;
 }
 
 .home-banner {
@@ -15,17 +17,20 @@
 }
 
 .home-banner-image {
-    height: 750px;
+    height: 600px;
+    width: 100%;
     position: relative;
     display: inline-block;
     overflow: hidden;
     animation: fadeIn 5s;
+    border-radius: 10px;
 }
 
 .home-banner-img {
     height: 100%;
     width: 100%;
     object-fit: fill;
+    border-radius: 10px;
 }
 
 .home-main-information-box {
@@ -34,9 +39,6 @@
 }
 
 .home-category-area {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
     align-items: center;
     position: relative;
     -webkit-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
@@ -45,38 +47,43 @@
 }
 
 .home-art-categories {
-    grid-column: 1/2;
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    grid-template-columns: 1fr;
-    position: relative;
-    min-height: 600px;
+    min-height: 500px;
     width: 100%;
     padding: 4rem;
 }
 
+.welcome-info-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    height: 300px;
+    width: 275px;
+    border-radius: 5px;
+}
+
+.home-welcome-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .home-welcome-info-text {
-    font-size: 32px;
-    text-align: justify;
-    line-height: 2.5;
+    font-size: 26px;
+    line-height: 1.5;
     color: #e0e1dd;
-    font-family: 'Titan One', cursive;
-    text-shadow: 0px 0px 15px rgba(131, 138, 189, 1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: 'Lilita One', cursive;
+    font-family: 'Lora', serif;
+    text-shadow: 0px 0px 25px rgba(131, 138, 189, 1);
 }
-
-.home-welcome-info-text.reveal {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 
 .category-illustration {
     position: relative;
-    height: 350px;
-    width: 300px;
+    height: 300px;
+    width: 250px;
     margin: .7rem;
     overflow: hidden;
     border-radius: 5px;
