@@ -8,16 +8,13 @@ import Modal from './Modal';
 const Gallery = ({ languageSetup }) => {
     const [modalVisibility, setModalVisibility] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-
     const [galleryAttribute, setGalleryAttribute] = useState(null);
     const [galleryImages, setGalleryImages] = useState(null);
     const [imageNumber, setImageNumber] = useState(12);
     const [totalImages, setTotalImages] = useState(0);
-
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [activeButton, setActiveButton] = useState(null);
-
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const categoryFromURL = searchParams.get("category");

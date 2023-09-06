@@ -1,7 +1,8 @@
 .gallery-images {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
+    justify-items: center;
+    gap: 25px;
 }
 
 .gallery-image-box {
@@ -9,6 +10,7 @@
     flex-direction: column;
     min-height: 350px;
     max-height: 350px;
+    max-width: 270px;
     padding: .5rem;
     cursor: pointer;
     background: #101010;
@@ -30,10 +32,10 @@
 }
 
 .gallery-image-pic {
-    min-width: 255px;
-    max-width: 255px;
-    min-height: 295px;
-    max-height: 295px;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 300px;
+    max-height: 300px;
     border: none;
     background: none;
     cursor: pointer;

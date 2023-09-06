@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Taviraj:wght@500&display=swap');
 
 .gallery-content {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     min-width: 100%;
     background: #000;
 }
@@ -9,6 +12,7 @@
 .gallery-box {
     padding-bottom: 1rem;
     animation: fadeIn 5s;
+    /* border: 1px solid #ddd; */
 }
 
 .gallery-banner {
