@@ -217,7 +217,7 @@
     .contact-left {
         width: 100%;
         min-height: 200px;
-        margin: 0;
+        margin-top: 3.5rem;
     }
 
     .contact-detail-info {
@@ -228,7 +228,7 @@
     .contact-detail-icon {
         width: 45px;
         margin-right: 1.5rem;
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .contact-detail-key-value {
@@ -256,13 +256,13 @@
     }
 
     .contact-right {
-        min-height: 400px;
+        min-height: 450px;
         width: 100%;
         margin: 0;
     }
 
     .contact-form {
-        min-height: 350px;
+        min-height: 450px;
         width: 350px;
     }
 

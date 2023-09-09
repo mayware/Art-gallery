@@ -148,10 +148,10 @@
     }
 
     .gallery-banner-quote-text {
-        font-family: 'Special Elite', cursive !important;
-        color: #000;
-        font-size: 16px;
-        font-weight: 500;
+        font-family: 'Lilita One', cursive;
+        font-family: 'Taviraj', serif;
+        font-size: 20px;
+        font-weight: 800;
         letter-spacing: 0;
     }
 }

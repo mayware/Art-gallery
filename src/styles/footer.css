@@ -28,7 +28,7 @@
 .footer-brand-name-logo {
     height: 70px;
     width: 200px;
-    object-fit: fill;
+    object-fit: cover;
 }
 
 .footer-contact-details {
@@ -84,5 +84,10 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    .footer-brand-name-logo {
+        height: 65px;
+        width: 150px;
     }
 }
