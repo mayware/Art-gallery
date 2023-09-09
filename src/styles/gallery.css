@@ -2,30 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Taviraj:wght@500&display=swap');
 
 .gallery-content {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-    min-width: 100%;
     background: #000;
 }
 
 .gallery-box {
     padding-bottom: 1rem;
     animation: fadeIn 5s;
-    /* border: 1px solid #ddd; */
 }
 
 .gallery-banner {
     position: relative;
     height: 500px;
     width: 100%;
-    border-radius: 10px;
 }
 
 .gallery-banner-img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -70,6 +64,10 @@
 }
 
 .gallery-set {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     min-height: 800px;
     min-width: 960px;
     max-width: 100%;

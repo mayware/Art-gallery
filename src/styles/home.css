@@ -29,7 +29,7 @@
 .home-banner-img {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -41,9 +41,6 @@
 .home-category-area {
     align-items: center;
     position: relative;
-    -webkit-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
-    -moz-box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
-    box-shadow: -2px -26px 50px 20px rgba(0, 0, 0, 1);
 }
 
 .home-art-categories {
