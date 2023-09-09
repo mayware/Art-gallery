@@ -47,18 +47,15 @@ const Home = ({ languageSetup }) => {
                 <div className="home-category-area">
                     <div className="home-art-categories">
                         {homeImages && <Homeimages homeImages={homeImages} />}
-                        <div className="welcome-info-info">
-                            <div className="home-welcome-info">
-                                {welcomeText && (
-                                    <span
-                                        ref={ref}
-                                        className={`home-welcome-info-text ${inView ? 'reveal' : ''}`}
-                                        dangerouslySetInnerHTML={{ __html: welcomeText }}
-                                    />
-                                )}
-                            </div>
+                        <div className="home-welcome-info">
+                            {welcomeText && (
+                                <span
+                                    ref={ref}
+                                    className={`home-welcome-info-text ${inView ? 'reveal' : ''}`}
+                                    dangerouslySetInnerHTML={{ __html: welcomeText }}
+                                />
+                            )}
                         </div>
-
                     </div>
                 </div>
             </div>

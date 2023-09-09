@@ -76,9 +76,6 @@
     border-radius: 15px;
     margin-bottom: 1rem;
     background: #151515;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
-    box-shadow: 0px 0px 15px 0px rgba(32, 32, 32, 1);
 }
 
 .modal-image-img {
@@ -188,5 +185,23 @@
     to {
         top: 0;
         opacity: 1
+    }
+}
+
+@media(max-width: 768px) {
+
+    .modal {
+        padding-top: 0;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin: auto;
+        padding: .5rem;
+        border-radius: 25px;
+        width: 400px;
+        height: 550px;
     }
 }
