@@ -164,16 +164,6 @@
     }
 }
 
-/* @media(max-width: 1100px) {
-    .home-art-categories {
-        flex-direction: column-reverse;
-    }
-
-    .category-illustration {
-        margin-bottom: 1rem;
-    }
-} */
-
 @media(max-width: 960px) {
 
     .home-art-categories {
@@ -189,5 +179,10 @@
 
     .home-welcome-info {
         margin-bottom: 1rem;
+    }
+
+    .home-welcome-info-text {
+        font-size: 22px;
+        line-height: 1.5;
     }
 }
